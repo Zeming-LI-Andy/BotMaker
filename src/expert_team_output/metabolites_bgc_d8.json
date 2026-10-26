@@ -1,0 +1,405 @@
+{
+  "research_context": "How to predict metabolites through BGC sequences",
+  "num_experts": 5,
+  "diversity": 8,
+  "team": {
+    "computational_automata_theorist": {
+      "type": "Computational Automata Theorist",
+      "expert_description": "Senior researcher specializing in automata theory and formal language hierarchies, with a Ph.D. in theoretical computer science and decades of work on pushdown automata and their extensions. My core expertise lies in modeling discrete sequential processes as state-transition systems with stack-based memory, analyzing their computational power, and characterizing the formal languages they accept. Typical research problems involve defining new automaton models, proving language inclusion or equivalence properties, and developing parsing or generation algorithms for context-free and mildly context-sensitive grammars. Keywords and concepts central to my work include pushdown automata, context-free grammars, stack alphabets, transition functions, empty-stack acceptance, Chomsky hierarchy, and formal language theory."
+    },
+    "categorical_algebraic_topologist": {
+      "type": "Categorical Algebraic Topologist",
+      "expert_description": "Trained in pure mathematics with a focus on categorical semantics and homotopy theory, this researcher specializes in the compositional structure of complex systems through the lens of category theory. Their work investigates how algebraic invariants, such as functorial relationships between structured objects, can classify and constrain transformation sequences in abstract settings. A central object of study is the representation of processes as morphisms within a category, where substrates form the objects and their sequential or parallel composition is governed by functoriality—yielding a rigorous framework to analyze how local rules assemble into global behaviors without loss of structural information. Typical research problems involve constructing categorical models for rewriting systems, exploring operadic algebras for composition, and characterizing the coherence conditions that ensure well-defined compositional semantics. Keywords guiding their literature searches include: enriched category theory, operads, string diagrams, symmetric monoidal categories, double pushout rewriting, functorial semantics, and abstract homotopy theory."
+    },
+    "mass_spectrometry_imaging_analyst": {
+      "type": "Mass Spectrometry Imaging Analyst",
+      "expert_description": "Trained as an analytical chemist with a focus on spatial mass spectrometry, I specialize in high-throughput metabolomic profiling and the construction of richly annotated spectral databases. My work centers on generating tandem MS/MS fragmentation trees for diverse metabolite structures and organizing these empirical signatures into spectral similarity networks that serve as curated ground truth. I routinely employ matrix-assisted laser desorption/ionization (MALDI), desorption electrospray ionization (DESI), and ion mobility separation coupled to high-resolution mass analyzers for direct chemical measurement in biological tissues. By bridging chromatographic separation, collision-induced dissociation, and rigorous spectral library curation, my research establishes verifiable structure–spectrum relationships. Core concepts that define my field include metabolite annotation confidence levels, spectral entropy, fragmentation rules, collision cross-section libraries, and molecular networking via Global Natural Products Social Molecular Networking (GNPS)."
+    },
+    "computational_coding_theorist": {
+      "type": "Computational Coding Theorist",
+      "expert_description": "Trained in information theory and discrete mathematics, with deep expertise in algebraic coding theory and the design of efficient decoding algorithms. My research centers on error-correcting codes, focusing on the mathematical structures that govern reliable communication over noisy channels, including block codes, convolutional codes, and their associated decoding strategies like syndrome decoding and iterative belief propagation. A core object of study is the codebook—a structured set of valid codewords defined by algebraic constraints—and the development of algorithms that can recover an original transmitted message from a corrupted received signal by solving parity-check systems. Key concepts in my domain include code distance, channel capacity, the generator and parity-check matrix formalism, and sphere-packing bounds, which collectively define the fundamental limits and practical mechanisms of reliable data transmission."
+    },
+    "philosopher_of_science_and_epistemologist": {
+      "type": "Philosopher of Science and Epistemologist",
+      "expert_description": "Trained in philosophy of science with a focus on the epistemology of modeling and simulation, my research investigates the logical structure and justification of scientific inference under conditions of sparse data and incomplete background theory. I specialize in analyzing the underdetermination of theory by evidence and the epistemic consequences of model pluralism, particularly in domains where predictive models must bridge large inferential gaps from limited empirical inputs. My work draws on historical and contemporary case studies, formal epistemology, and conceptual analysis to examine how theoretical virtues—such as simplicity, explanatory depth, and robustness—trade off against one another when evidence is weak or fragmented. Central concepts in my research include confirmation holism, the Duhem-Quine thesis, epistemic opacity, inductive risk, and the role of auxiliary assumptions in stabilizing model-based reasoning. I trace how choices in model architecture, parameterization, and evidential standards embed non-empirical commitments that shape the reliability and scope of scientific claims."
+    }
+  },
+  "structure": {
+    "problem_summary": "Predicting the chemical structures of metabolites directly from biosynthetic gene cluster sequences by modeling the genotype-to-chemotype mapping.",
+    "core_objects": [
+      {
+        "name": "biosynthetic gene cluster sequence",
+        "role": "encoded genetic blueprint specifying enzymatic machinery"
+      },
+      {
+        "name": "metabolite structure",
+        "role": "chemical output produced by the expressed pathway"
+      },
+      {
+        "name": "biosynthetic enzyme",
+        "role": "catalyst executing a specific chemical transformation on a substrate"
+      },
+      {
+        "name": "substrate",
+        "role": "chemical input accepted and modified by an enzyme"
+      },
+      {
+        "name": "reaction rule",
+        "role": "deterministic or probabilistic mapping from enzyme and substrate to product structure"
+      },
+      {
+        "name": "sequence-structure model",
+        "role": "predictive function linking genetic sequence features to chemical structural outcomes"
+      },
+      {
+        "name": "training data",
+        "role": "empirical examples pairing BGC sequences with verified metabolite structures"
+      },
+      {
+        "name": "chemical space representation",
+        "role": "formal encoding of molecular structure for computational comparison and generation"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"biosynthetic gene cluster sequence\", \"to\": \"biosynthetic enzyme\", \"relation\": \"encodes\"}",
+      "{\"from\": \"biosynthetic enzyme\", \"to\": \"substrate\", \"relation\": \"binds_and_transforms\"}",
+      "{\"from\": \"biosynthetic enzyme\", \"to\": \"reaction rule\", \"relation\": \"implements\"}",
+      "{\"from\": \"reaction rule\", \"to\": \"metabolite structure\", \"relation\": \"determines\"}",
+      "{\"from\": \"sequence-structure model\", \"to\": \"biosynthetic gene cluster sequence\", \"relation\": \"takes_as_input\"}",
+      "{\"from\": \"sequence-structure model\", \"to\": \"metabolite structure\", \"relation\": \"predicts\"}",
+      "{\"from\": \"training data\", \"to\": \"sequence-structure model\", \"relation\": \"constrains_parameters\"}",
+      "{\"from\": \"chemical space representation\", \"to\": \"metabolite structure\", \"relation\": \"encodes\"}"
+    ],
+    "constraints": [
+      "Limited availability of experimentally validated BGC-metabolite pairs for training",
+      "Incomplete understanding of all biosynthetic logic and tailoring reactions",
+      "Combinatorial explosion of possible chemical transformations and intermediates",
+      "Substrate promiscuity and pathway branching introduce ambiguity",
+      "Silent or conditionally expressed BGCs lack observable metabolite data"
+    ],
+    "native_domain": "natural products bioinformatics",
+    "key_concepts": [
+      "biosynthetic gene cluster",
+      "metabolite structure prediction",
+      "genotype-to-chemotype mapping",
+      "biosynthetic pathway logic",
+      "enzyme specificity prediction",
+      "chemical fingerprint encoding",
+      "genome mining",
+      "machine learning for natural products"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "computational",
+      "source_domain": "automata theory and formal language hierarchies",
+      "anchor_relation": "{\"from\": \"biosynthetic gene cluster sequence\", \"to\": \"pushdown automaton\", \"relation\": \"treats a BGC as the initial configuration of a pushdown automaton where enzymatic domains are state transitions with stack operations, and substrate intermediate processing defines the stack alphabet, yielding accepted strings that represent possible metabolite structures\"}",
+      "object_mapping_focus": "BGC sequence → initial configuration; catalytic domains → transition functions with stack manipulations; substrate channeling → stack alphabet and operations; metabolite output → strings accepted by empty stack",
+      "slot_focus": "Formalizing biosynthetic logic as an attribute grammar to enable systematic generation and verification of chemical outputs.",
+      "contrast_hint": "Replaces NLP's statistical parsing with automata-theoretic generation, contrasting with native bioinformatics' reliance on sequence homology and empirical correlation."
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "theoretical",
+      "source_domain": "category theory and algebraic topology",
+      "anchor_relation": "{\"from\": \"reaction rule\", \"to\": \"morphism composition and functoriality in chemical transformation categories\", \"relation\": \"models reaction rules as morphisms in a category whose objects are substrates, revealing compositional structure\"}",
+      "object_mapping_focus": "reaction rule → morphism; substrate → domain object; metabolite structure → codomain object; biosynthetic enzyme → functor between substrate and product categories",
+      "slot_focus": "Revealing the compositional algebraic structure of biosynthetic transformations to constrain the space of possible metabolite outcomes.",
+      "contrast_hint": "Provides a structural, compositional lens on reaction logic that differs from the probabilistic or empirical perspectives common in native bioinformatics."
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "empirical",
+      "source_domain": "analytical chemistry and mass spectrometry imaging",
+      "anchor_relation": "{\"from\": \"training data\", \"to\": \"high-throughput metabolomic profiling and spectral database construction\", \"relation\": \"generates rich empirical pairing of spectral signatures with verified structures to anchor model training\"}",
+      "object_mapping_focus": "training data → spectral libraries with curated structure assignments; metabolite structure → tandem MS/MS fragmentation trees; chemical space representation → spectral similarity networks",
+      "slot_focus": "Leveraging direct chemical measurement and spectral databases as empirical ground truth for structure prediction models.",
+      "contrast_hint": "Focuses on analytical instrumentation and spectral data generation, contrasting with purely sequence-based or computational modeling slots."
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "computational",
+      "source_domain": "cryptography and coding theory",
+      "anchor_relation": "{\"from\": \"sequence-structure model\", \"to\": \"error-correcting codes and decoding algorithms\", \"relation\": \"recasts genotype-to-chemotype mapping as a decoding problem where genetic sequences are encoded messages transmitted through a noisy biosynthetic channel and metabolite structures are the recovered plaintext\"}",
+      "object_mapping_focus": "BGC sequence → encoded ciphertext; biosynthetic enzyme domain → encoding function; metabolite structure → decrypted message; reaction logic → parity-check matrix; chemical space → codebook of valid codewords",
+      "slot_focus": "Applying neural machine translation frameworks to learn the mapping from genetic code to chemical structure as a sequence transduction task.",
+      "contrast_hint": "Brings concepts of code distance, error correction, and syndrome decoding from information theory, treating biosynthetic rules as constraints that define a valid chemical codebook rather than explicit translation grammars."
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "critical",
+      "source_domain": "philosophy of science and epistemology",
+      "anchor_relation": "{\"from\": \"training data\", \"to\": \"underdetermination of theory by evidence and model pluralism\", \"relation\": \"examines how limited empirical data and incomplete biosynthetic knowledge constrain the epistemic reliability of predictive models\"}",
+      "object_mapping_focus": "training data → empirical evidence; sequence-structure model → scientific theory; constraints → sources of underdetermination; key concepts → theoretical virtues and trade-offs",
+      "slot_focus": "Interrogating the epistemic limits and assumptions in genotype-to-chemotype prediction when empirical coverage is sparse and mechanistic knowledge incomplete.",
+      "contrast_hint": "Provides a meta-level critique of model validity and evidential reasoning, contrasting with all other slots' constructive, domain-specific modeling approaches."
+    }
+  ],
+  "members": [
+    {
+      "key": "computational_automata_theorist",
+      "type": "Computational Automata Theorist",
+      "expert_description": "Senior researcher specializing in automata theory and formal language hierarchies, with a Ph.D. in theoretical computer science and decades of work on pushdown automata and their extensions. My core expertise lies in modeling discrete sequential processes as state-transition systems with stack-based memory, analyzing their computational power, and characterizing the formal languages they accept. Typical research problems involve defining new automaton models, proving language inclusion or equivalence properties, and developing parsing or generation algorithms for context-free and mildly context-sensitive grammars. Keywords and concepts central to my work include pushdown automata, context-free grammars, stack alphabets, transition functions, empty-stack acceptance, Chomsky hierarchy, and formal language theory.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "computational",
+        "source_domain": "automata theory and formal language hierarchies",
+        "anchor_relation": "{\"from\": \"biosynthetic gene cluster sequence\", \"to\": \"pushdown automaton\", \"relation\": \"treats a BGC as the initial configuration of a pushdown automaton where enzymatic domains are state transitions with stack operations, and substrate intermediate processing defines the stack alphabet, yielding accepted strings that represent possible metabolite structures\"}",
+        "object_mapping_focus": "BGC sequence → initial configuration; catalytic domains → transition functions with stack manipulations; substrate channeling → stack alphabet and operations; metabolite output → strings accepted by empty stack",
+        "slot_focus": "Formalizing biosynthetic logic as an attribute grammar to enable systematic generation and verification of chemical outputs.",
+        "contrast_hint": "Replaces NLP's statistical parsing with automata-theoretic generation, contrasting with native bioinformatics' reliance on sequence homology and empirical correlation."
+      }
+    },
+    {
+      "key": "categorical_algebraic_topologist",
+      "type": "Categorical Algebraic Topologist",
+      "expert_description": "Trained in pure mathematics with a focus on categorical semantics and homotopy theory, this researcher specializes in the compositional structure of complex systems through the lens of category theory. Their work investigates how algebraic invariants, such as functorial relationships between structured objects, can classify and constrain transformation sequences in abstract settings. A central object of study is the representation of processes as morphisms within a category, where substrates form the objects and their sequential or parallel composition is governed by functoriality—yielding a rigorous framework to analyze how local rules assemble into global behaviors without loss of structural information. Typical research problems involve constructing categorical models for rewriting systems, exploring operadic algebras for composition, and characterizing the coherence conditions that ensure well-defined compositional semantics. Keywords guiding their literature searches include: enriched category theory, operads, string diagrams, symmetric monoidal categories, double pushout rewriting, functorial semantics, and abstract homotopy theory.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "theoretical",
+        "source_domain": "category theory and algebraic topology",
+        "anchor_relation": "{\"from\": \"reaction rule\", \"to\": \"morphism composition and functoriality in chemical transformation categories\", \"relation\": \"models reaction rules as morphisms in a category whose objects are substrates, revealing compositional structure\"}",
+        "object_mapping_focus": "reaction rule → morphism; substrate → domain object; metabolite structure → codomain object; biosynthetic enzyme → functor between substrate and product categories",
+        "slot_focus": "Revealing the compositional algebraic structure of biosynthetic transformations to constrain the space of possible metabolite outcomes.",
+        "contrast_hint": "Provides a structural, compositional lens on reaction logic that differs from the probabilistic or empirical perspectives common in native bioinformatics."
+      }
+    },
+    {
+      "key": "mass_spectrometry_imaging_analyst",
+      "type": "Mass Spectrometry Imaging Analyst",
+      "expert_description": "Trained as an analytical chemist with a focus on spatial mass spectrometry, I specialize in high-throughput metabolomic profiling and the construction of richly annotated spectral databases. My work centers on generating tandem MS/MS fragmentation trees for diverse metabolite structures and organizing these empirical signatures into spectral similarity networks that serve as curated ground truth. I routinely employ matrix-assisted laser desorption/ionization (MALDI), desorption electrospray ionization (DESI), and ion mobility separation coupled to high-resolution mass analyzers for direct chemical measurement in biological tissues. By bridging chromatographic separation, collision-induced dissociation, and rigorous spectral library curation, my research establishes verifiable structure–spectrum relationships. Core concepts that define my field include metabolite annotation confidence levels, spectral entropy, fragmentation rules, collision cross-section libraries, and molecular networking via Global Natural Products Social Molecular Networking (GNPS).",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "empirical",
+        "source_domain": "analytical chemistry and mass spectrometry imaging",
+        "anchor_relation": "{\"from\": \"training data\", \"to\": \"high-throughput metabolomic profiling and spectral database construction\", \"relation\": \"generates rich empirical pairing of spectral signatures with verified structures to anchor model training\"}",
+        "object_mapping_focus": "training data → spectral libraries with curated structure assignments; metabolite structure → tandem MS/MS fragmentation trees; chemical space representation → spectral similarity networks",
+        "slot_focus": "Leveraging direct chemical measurement and spectral databases as empirical ground truth for structure prediction models.",
+        "contrast_hint": "Focuses on analytical instrumentation and spectral data generation, contrasting with purely sequence-based or computational modeling slots."
+      }
+    },
+    {
+      "key": "computational_coding_theorist",
+      "type": "Computational Coding Theorist",
+      "expert_description": "Trained in information theory and discrete mathematics, with deep expertise in algebraic coding theory and the design of efficient decoding algorithms. My research centers on error-correcting codes, focusing on the mathematical structures that govern reliable communication over noisy channels, including block codes, convolutional codes, and their associated decoding strategies like syndrome decoding and iterative belief propagation. A core object of study is the codebook—a structured set of valid codewords defined by algebraic constraints—and the development of algorithms that can recover an original transmitted message from a corrupted received signal by solving parity-check systems. Key concepts in my domain include code distance, channel capacity, the generator and parity-check matrix formalism, and sphere-packing bounds, which collectively define the fundamental limits and practical mechanisms of reliable data transmission.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "computational",
+        "source_domain": "cryptography and coding theory",
+        "anchor_relation": "{\"from\": \"sequence-structure model\", \"to\": \"error-correcting codes and decoding algorithms\", \"relation\": \"recasts genotype-to-chemotype mapping as a decoding problem where genetic sequences are encoded messages transmitted through a noisy biosynthetic channel and metabolite structures are the recovered plaintext\"}",
+        "object_mapping_focus": "BGC sequence → encoded ciphertext; biosynthetic enzyme domain → encoding function; metabolite structure → decrypted message; reaction logic → parity-check matrix; chemical space → codebook of valid codewords",
+        "slot_focus": "Applying neural machine translation frameworks to learn the mapping from genetic code to chemical structure as a sequence transduction task.",
+        "contrast_hint": "Brings concepts of code distance, error correction, and syndrome decoding from information theory, treating biosynthetic rules as constraints that define a valid chemical codebook rather than explicit translation grammars."
+      }
+    },
+    {
+      "key": "philosopher_of_science_and_epistemologist",
+      "type": "Philosopher of Science and Epistemologist",
+      "expert_description": "Trained in philosophy of science with a focus on the epistemology of modeling and simulation, my research investigates the logical structure and justification of scientific inference under conditions of sparse data and incomplete background theory. I specialize in analyzing the underdetermination of theory by evidence and the epistemic consequences of model pluralism, particularly in domains where predictive models must bridge large inferential gaps from limited empirical inputs. My work draws on historical and contemporary case studies, formal epistemology, and conceptual analysis to examine how theoretical virtues—such as simplicity, explanatory depth, and robustness—trade off against one another when evidence is weak or fragmented. Central concepts in my research include confirmation holism, the Duhem-Quine thesis, epistemic opacity, inductive risk, and the role of auxiliary assumptions in stabilizing model-based reasoning. I trace how choices in model architecture, parameterization, and evidential standards embed non-empirical commitments that shape the reliability and scope of scientific claims.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "critical",
+        "source_domain": "philosophy of science and epistemology",
+        "anchor_relation": "{\"from\": \"training data\", \"to\": \"underdetermination of theory by evidence and model pluralism\", \"relation\": \"examines how limited empirical data and incomplete biosynthetic knowledge constrain the epistemic reliability of predictive models\"}",
+        "object_mapping_focus": "training data → empirical evidence; sequence-structure model → scientific theory; constraints → sources of underdetermination; key concepts → theoretical virtues and trade-offs",
+        "slot_focus": "Interrogating the epistemic limits and assumptions in genotype-to-chemotype prediction when empirical coverage is sparse and mechanistic knowledge incomplete.",
+        "contrast_hint": "Provides a meta-level critique of model validity and evidential reasoning, contrasting with all other slots' constructive, domain-specific modeling approaches."
+      }
+    }
+  ],
+  "validation_issues": [],
+  "expert_similarity": {
+    "max_pairwise": 0.685846,
+    "max_pair": {
+      "member_key_a": "mass_spectrometry_imaging_analyst",
+      "member_key_b": "computational_coding_theorist",
+      "cosine_similarity": 0.685846
+    },
+    "pairs": [
+      {
+        "member_key_a": "computational_automata_theorist",
+        "member_key_b": "categorical_algebraic_topologist",
+        "cosine_similarity": 0.670318
+      },
+      {
+        "member_key_a": "computational_automata_theorist",
+        "member_key_b": "mass_spectrometry_imaging_analyst",
+        "cosine_similarity": 0.598037
+      },
+      {
+        "member_key_a": "computational_automata_theorist",
+        "member_key_b": "computational_coding_theorist",
+        "cosine_similarity": 0.672736
+      },
+      {
+        "member_key_a": "computational_automata_theorist",
+        "member_key_b": "philosopher_of_science_and_epistemologist",
+        "cosine_similarity": 0.641273
+      },
+      {
+        "member_key_a": "categorical_algebraic_topologist",
+        "member_key_b": "mass_spectrometry_imaging_analyst",
+        "cosine_similarity": 0.601001
+      },
+      {
+        "member_key_a": "categorical_algebraic_topologist",
+        "member_key_b": "computational_coding_theorist",
+        "cosine_similarity": 0.66643
+      },
+      {
+        "member_key_a": "categorical_algebraic_topologist",
+        "member_key_b": "philosopher_of_science_and_epistemologist",
+        "cosine_similarity": 0.627666
+      },
+      {
+        "member_key_a": "mass_spectrometry_imaging_analyst",
+        "member_key_b": "computational_coding_theorist",
+        "cosine_similarity": 0.685846
+      },
+      {
+        "member_key_a": "mass_spectrometry_imaging_analyst",
+        "member_key_b": "philosopher_of_science_and_epistemologist",
+        "cosine_similarity": 0.582155
+      },
+      {
+        "member_key_a": "computational_coding_theorist",
+        "member_key_b": "philosopher_of_science_and_epistemologist",
+        "cosine_similarity": 0.681012
+      }
+    ],
+    "threshold": 0.7
+  },
+  "domain_similarity": {
+    "native_domain": "natural products bioinformatics",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "automata theory and formal language hierarchies",
+        "native_domain_cosine": 0.399636
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "category theory and algebraic topology",
+        "native_domain_cosine": 0.363844
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "analytical chemistry and mass spectrometry imaging",
+        "native_domain_cosine": 0.447216
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "cryptography and coding theory",
+        "native_domain_cosine": 0.409461
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "philosophy of science and epistemology",
+        "native_domain_cosine": 0.364754
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.613265,
+    "max_pair_domain": {
+      "slot_a": "slot_2",
+      "slot_b": "slot_4",
+      "source_domain_a": "category theory and algebraic topology",
+      "source_domain_b": "cryptography and coding theory",
+      "cosine_similarity": 0.613265
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "automata theory and formal language hierarchies",
+        "source_domain_b": "category theory and algebraic topology",
+        "cosine_similarity": 0.605971
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "automata theory and formal language hierarchies",
+        "source_domain_b": "analytical chemistry and mass spectrometry imaging",
+        "cosine_similarity": 0.435091
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "automata theory and formal language hierarchies",
+        "source_domain_b": "cryptography and coding theory",
+        "cosine_similarity": 0.573372
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "automata theory and formal language hierarchies",
+        "source_domain_b": "philosophy of science and epistemology",
+        "cosine_similarity": 0.426505
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "category theory and algebraic topology",
+        "source_domain_b": "analytical chemistry and mass spectrometry imaging",
+        "cosine_similarity": 0.46115
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "category theory and algebraic topology",
+        "source_domain_b": "cryptography and coding theory",
+        "cosine_similarity": 0.613265
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "category theory and algebraic topology",
+        "source_domain_b": "philosophy of science and epistemology",
+        "cosine_similarity": 0.490602
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "analytical chemistry and mass spectrometry imaging",
+        "source_domain_b": "cryptography and coding theory",
+        "cosine_similarity": 0.51047
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "analytical chemistry and mass spectrometry imaging",
+        "source_domain_b": "philosophy of science and epistemology",
+        "cosine_similarity": 0.487069
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "cryptography and coding theory",
+        "source_domain_b": "philosophy of science and epistemology",
+        "cosine_similarity": 0.513298
+      }
+    ],
+    "slot_refine_log": [
+      "Slot slot_4: source_domain 'natural language processing and machine translation' is too close to native domain 'natural products bioinformatics' (cosine 0.559 > 0.450). Use a more distant field.",
+      "Slot slot_4: source_domain 'computational neuroscience and neural coding' is too close to native domain 'natural products bioinformatics' (cosine 0.511 > 0.450). Use a more distant field.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_1 and slot_4 have source_domains too similar to each other (cosine 0.656 > 0.550). Spread domains apart per tier.",
+      "Slot slot_1: source_domain 'natural language processing and compiler-compilers' is too close to native domain 'natural products bioinformatics' (cosine 0.555 > 0.450). Use a more distant field.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier.",
+      "Slots slot_2 and slot_4 have source_domains too similar to each other (cosine 0.613 > 0.550). Spread domains apart per tier."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 8,
+    "tier": "diverse",
+    "max_expert_cosine": 0.7,
+    "min_expert_cosine": null,
+    "min_source_native_cosine": null,
+    "max_source_native_cosine": 0.45,
+    "max_pairwise_domain_cosine": 0.55
+  }
+}

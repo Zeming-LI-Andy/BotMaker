@@ -1,0 +1,394 @@
+{
+  "research_context": "Differences in intestinal flora between irritable bowel syndrome with constipation (IBS-C) and functional constipation (FC)",
+  "num_experts": 5,
+  "diversity": 2,
+  "team": {
+    "computational_metagenomics_researcher": {
+      "type": "Computational Metagenomics Researcher",
+      "expert_description": "Trained at the intersection of computer science and microbial ecology, this researcher specializes in machine learning-based metagenomic profiling, with deep experience in high-dimensional feature extraction from shotgun sequencing data. Their work centers on developing and applying supervised classification algorithms to taxonomic and functional gene abundance tables, transforming raw metagenomic reads into informative feature vectors that capture subtle compositional shifts. Typical research problems include biomarker discovery from complex microbial communities, cross-study validation of predictive models, and the computational deconvolution of strain-level functional potential. Core concepts woven into their daily practice involve random forests, gradient boosting, deep learning architectures for count data, metagenome-wide association frameworks, and functional annotation pipelines such as KEGG and eggNOG-mapper."
+    },
+    "gastrointestinal_motility_physiologist": {
+      "type": "Gastrointestinal Motility Physiologist",
+      "expert_description": "Trained in clinical gastroenterology and gastrointestinal physiology, this researcher specializes in the objective quantification of human gut motor function. Their core methodological expertise lies in the application and interpretation of scintigraphic transit studies and wireless motility capsule (WMC) technology to measure regional and whole-gut transit times. Typical investigations focus on characterizing colonic transit profiles, including segmental retention patterns, as physiological discriminators of normal and disordered motility. Their work relies on empirical, non-invasive measurement of luminal content movement, generating high-fidelity spatiotemporal data on gastric emptying, small bowel transit, and colonic residence. Key concepts in their research include colonic geometric centers, pressure-derived motility indices, and the relationship between transit kinetics and luminal flow dynamics, informing a mechanistic understanding of functional bowel physiology."
+    },
+    "systems_biology_modeler": {
+      "type": "Systems Biology Modeler",
+      "expert_description": "Trained in theoretical systems biology and metabolic network reconstruction, my research develops and applies constraint-based modeling frameworks to map the complex biochemical interactions between microbial communities and their hosts. I specialize in constructing genome-scale metabolic models (GEMs) to simulate how microbial metabolic fluxes—particularly those governing the production of short-chain fatty acids—integrate with host metabolic and signaling networks. Typical problems in my group involve integrating multi-omics data to refine in silico representations of host-microbe metabolic exchange, analyzing pathway connectivity, and predicting how perturbations in microbial metabolism propagate to influence host cell functions. Core concepts and keywords in our work include flux balance analysis (FBA), community metabolic modeling, metabolite exchange networks, host-microbiome interactome inference, and the application of thermodynamic constraints to cross-species metabolic pathways."
+    },
+    "translational_gastroenterology_clinical_researcher": {
+      "type": "Translational Gastroenterology Clinical Researcher",
+      "expert_description": "A clinical researcher trained in gastroenterology with a dedicated focus on patient-centered phenotyping of chronic abdominal pain. Core expertise lies in the design, validation, and application of patient-reported outcome measures and quantitative sensory testing protocols to characterize visceral hypersensitivity in functional gastrointestinal disorders. Typical research involves developing standardized clinical tools to assess abdominal pain intensity, quality, and sensory thresholds, enabling stratification of patients by distinct pain phenotypes. Methodological approaches include psychophysical testing with barostat and thermal stimulation, psychometric validation of symptom diaries and questionnaires, and correlation of these clinical endpoints with underlying physiological mechanisms. Key concepts include visceral perception, allodynia, hyperalgesia, pressure-controlled distension, and the Rome diagnostic criteria, all aimed at bridging objective sensory assessment with the subjective patient experience."
+    },
+    "microbial_metabolomics_biochemist": {
+      "type": "Microbial Metabolomics Biochemist",
+      "expert_description": "Trained at the intersection of analytical chemistry and microbial ecology, I have spent over fifteen years applying high-resolution mass spectrometry to dissect the chemical dialogue within the gut ecosystem. My laboratory specializes in the targeted and untargeted metabolomics of bile acid profiles, using liquid chromatography–tandem mass spectrometry (LC-MS/MS) and gas chromatography–mass spectrometry (GC-MS) to quantify primary and secondary bile acids and discover novel microbially conjugated forms. We focus on characterizing microbial bile acid modifications—including deconjugation, 7α-dehydroxylation, oxidation, and epimerization—to map specific biotransformation patterns onto the functional capacity of complex microbial communities. Our analytical pipelines integrate stable isotope tracing, enzymatic activity assays, and spectral networking to link molecular structures to the microbial taxa and genes responsible for their production. Core concepts guiding my work include bile salt hydrolase (BSH) activity, hydroxysteroid dehydrogenase (HSDH) pathways, enterohepatic circulation dynamics, and the use of metabolome-wide association studies to connect chemical phenotypes with ecological and physiological outcomes."
+    }
+  },
+  "structure": {
+    "problem_summary": "This research topic investigates whether distinct gut microbiota profiles can differentiate irritable bowel syndrome with constipation (IBS-C) from functional constipation (FC), two disorders sharing constipation symptoms but differing in underlying pathophysiology.",
+    "core_objects": [
+      {
+        "name": "irritable bowel syndrome with constipation (IBS-C)",
+        "role": "disorder of gut-brain interaction characterized by abdominal pain and altered bowel habits"
+      },
+      {
+        "name": "functional constipation (FC)",
+        "role": "disorder of defecation without prominent abdominal pain, often involving colonic transit or anorectal dysfunction"
+      },
+      {
+        "name": "intestinal flora",
+        "role": "microbial community inhabiting the gastrointestinal tract, influencing host physiology"
+      },
+      {
+        "name": "gut-brain axis",
+        "role": "bidirectional signaling pathway linking gut microbiota to central nervous system function"
+      },
+      {
+        "name": "colonic transit",
+        "role": "motility parameter reflecting movement of contents through the colon"
+      },
+      {
+        "name": "visceral hypersensitivity",
+        "role": "enhanced perception of gut stimuli, a hallmark of IBS pathophysiology"
+      },
+      {
+        "name": "short-chain fatty acids",
+        "role": "bacterial metabolites modulating gut motility, secretion, and sensory function"
+      },
+      {
+        "name": "bile acids",
+        "role": "host-derived molecules modified by gut bacteria, affecting colonic secretion and motility"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"intestinal flora\", \"to\": \"IBS-C\", \"relation\": \"altered composition and function may contribute to abdominal pain via gut-brain axis modulation and visceral hypersensitivity\"}",
+      "{\"from\": \"intestinal flora\", \"to\": \"FC\", \"relation\": \"altered composition and function may influence stool frequency and consistency through effects on colonic transit and water absorption\"}",
+      "{\"from\": \"IBS-C\", \"to\": \"FC\", \"relation\": \"share constipation as a clinical endpoint but diverge in pain-related pathophysiology and microbial drivers\"}",
+      "{\"from\": \"short-chain fatty acids\", \"to\": \"IBS-C\", \"relation\": \"mediate microbial effects on visceral sensation and gut-brain signaling pathways\"}",
+      "{\"from\": \"bile acids\", \"to\": \"FC\", \"relation\": \"microbial deconjugation alters bile acid pool, impacting colonic motility and secretion\"}",
+      "{\"from\": \"colonic transit\", \"to\": \"FC\", \"relation\": \"slow transit is a defining physiological abnormality in a subset of FC patients\"}",
+      "{\"from\": \"visceral hypersensitivity\", \"to\": \"IBS-C\", \"relation\": \"defines the presence of abdominal pain, distinguishing IBS-C from FC\"}"
+    ],
+    "constraints": [
+      "High phenotypic overlap between IBS-C and FC complicates patient stratification in studies",
+      "Inter-individual variability in gut microbiota confounds identification of consistent disease-specific signatures",
+      "Causal direction between microbial changes and constipation subtypes remains unclear",
+      "Confounding factors include diet, medication use, and psychological comorbidities",
+      "Lack of standardized definitions for constipation subtypes across clinical and research settings"
+    ],
+    "native_domain": "gastroenterology and gut microbiome science",
+    "key_concepts": [
+      "gut microbiota composition",
+      "irritable bowel syndrome",
+      "functional constipation",
+      "constipation subtypes",
+      "microbiota-gut-brain axis",
+      "visceral hypersensitivity",
+      "colonic transit time",
+      "short-chain fatty acids"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "computational",
+      "source_domain": "machine learning and bioinformatics",
+      "anchor_relation": "{\"from\": \"intestinal flora\", \"to\": \"machine learning-based metagenomic profiling\", \"relation\": \"uses metagenomic sequencing data and classification algorithms to identify microbial signatures distinguishing IBS-C from FC\"}",
+      "object_mapping_focus": "microbial taxa and functional genes mapped to feature vectors for supervised classification",
+      "slot_focus": "Leverages high-dimensional microbiota data and predictive modeling to pinpoint compositional and functional microbial differences between constipation subtypes.",
+      "contrast_hint": "Focuses on pattern recognition and prediction from omics data, contrasting with mechanistic modeling or clinical phenotyping approaches."
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "empirical",
+      "source_domain": "gastrointestinal physiology",
+      "anchor_relation": "{\"from\": \"colonic transit\", \"to\": \"scintigraphic and wireless motility capsule measurement\", \"relation\": \"employs objective motility assessment tools to quantify colonic transit as a physiological discriminator between IBS-C and FC\"}",
+      "object_mapping_focus": "colonic transit time and segmental retention mapped to motility phenotypes",
+      "slot_focus": "Emphasizes physiological measurement of gut motor function to elucidate how transit abnormalities correlate with microbial profiles in constipation subtypes.",
+      "contrast_hint": "Provides direct physiological phenotyping, contrasting with omics-based or neurobiological perspectives."
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "theoretical",
+      "source_domain": "systems biology",
+      "anchor_relation": "{\"from\": \"short-chain fatty acids\", \"to\": \"metabolic network modeling of host-microbe interactions\", \"relation\": \"applies constraint-based models to simulate how microbial SCFA production fluxes influence host sensory and motility pathways\"}",
+      "object_mapping_focus": "bacterial metabolic pathways linked to SCFA synthesis mapped to host receptor signaling networks",
+      "slot_focus": "Constructs mechanistic frameworks linking microbial metabolism to host physiology, emphasizing causal inference in IBS-C versus FC pathophysiology.",
+      "contrast_hint": "Focuses on dynamic, multi-scale modeling of metabolic interactions, contrasting with descriptive profiling or clinical motility assessment."
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "translational",
+      "source_domain": "clinical gastroenterology",
+      "anchor_relation": "{\"from\": \"visceral hypersensitivity\", \"to\": \"validated patient-reported outcome measures and sensory testing protocols\", \"relation\": \"utilizes standardized clinical tools to assess abdominal pain and sensory thresholds, enabling patient stratification by pain phenotype\"}",
+      "object_mapping_focus": "pain symptoms and sensory thresholds mapped to clinical diagnostic criteria",
+      "slot_focus": "Bridges microbiota findings to clinical practice by emphasizing pain phenotyping as a key differentiator and therapeutic target in IBS-C versus FC.",
+      "contrast_hint": "Centers on patient-level clinical assessment and translation, contrasting with molecular profiling or computational modeling approaches."
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "empirical",
+      "source_domain": "microbial ecology",
+      "anchor_relation": "{\"from\": \"bile acids\", \"to\": \"targeted and untargeted metabolomics of bile acid profiles\", \"relation\": \"characterizes microbial bile acid modifications to link specific biotransformation patterns to colonic secretion and motility in constipation subtypes\"}",
+      "object_mapping_focus": "primary and secondary bile acid concentrations mapped to microbial enzymatic activities",
+      "slot_focus": "Examines microbial community function through bile acid metabolism as a mechanistic bridge between flora composition and constipation pathophysiology.",
+      "contrast_hint": "Emphasizes functional metabolomic readouts of microbial activity, contrasting with taxonomic profiling or host physiological measurement."
+    }
+  ],
+  "members": [
+    {
+      "key": "computational_metagenomics_researcher",
+      "type": "Computational Metagenomics Researcher",
+      "expert_description": "Trained at the intersection of computer science and microbial ecology, this researcher specializes in machine learning-based metagenomic profiling, with deep experience in high-dimensional feature extraction from shotgun sequencing data. Their work centers on developing and applying supervised classification algorithms to taxonomic and functional gene abundance tables, transforming raw metagenomic reads into informative feature vectors that capture subtle compositional shifts. Typical research problems include biomarker discovery from complex microbial communities, cross-study validation of predictive models, and the computational deconvolution of strain-level functional potential. Core concepts woven into their daily practice involve random forests, gradient boosting, deep learning architectures for count data, metagenome-wide association frameworks, and functional annotation pipelines such as KEGG and eggNOG-mapper.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "computational",
+        "source_domain": "machine learning and bioinformatics",
+        "anchor_relation": "{\"from\": \"intestinal flora\", \"to\": \"machine learning-based metagenomic profiling\", \"relation\": \"uses metagenomic sequencing data and classification algorithms to identify microbial signatures distinguishing IBS-C from FC\"}",
+        "object_mapping_focus": "microbial taxa and functional genes mapped to feature vectors for supervised classification",
+        "slot_focus": "Leverages high-dimensional microbiota data and predictive modeling to pinpoint compositional and functional microbial differences between constipation subtypes.",
+        "contrast_hint": "Focuses on pattern recognition and prediction from omics data, contrasting with mechanistic modeling or clinical phenotyping approaches."
+      }
+    },
+    {
+      "key": "gastrointestinal_motility_physiologist",
+      "type": "Gastrointestinal Motility Physiologist",
+      "expert_description": "Trained in clinical gastroenterology and gastrointestinal physiology, this researcher specializes in the objective quantification of human gut motor function. Their core methodological expertise lies in the application and interpretation of scintigraphic transit studies and wireless motility capsule (WMC) technology to measure regional and whole-gut transit times. Typical investigations focus on characterizing colonic transit profiles, including segmental retention patterns, as physiological discriminators of normal and disordered motility. Their work relies on empirical, non-invasive measurement of luminal content movement, generating high-fidelity spatiotemporal data on gastric emptying, small bowel transit, and colonic residence. Key concepts in their research include colonic geometric centers, pressure-derived motility indices, and the relationship between transit kinetics and luminal flow dynamics, informing a mechanistic understanding of functional bowel physiology.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "empirical",
+        "source_domain": "gastrointestinal physiology",
+        "anchor_relation": "{\"from\": \"colonic transit\", \"to\": \"scintigraphic and wireless motility capsule measurement\", \"relation\": \"employs objective motility assessment tools to quantify colonic transit as a physiological discriminator between IBS-C and FC\"}",
+        "object_mapping_focus": "colonic transit time and segmental retention mapped to motility phenotypes",
+        "slot_focus": "Emphasizes physiological measurement of gut motor function to elucidate how transit abnormalities correlate with microbial profiles in constipation subtypes.",
+        "contrast_hint": "Provides direct physiological phenotyping, contrasting with omics-based or neurobiological perspectives."
+      }
+    },
+    {
+      "key": "systems_biology_modeler",
+      "type": "Systems Biology Modeler",
+      "expert_description": "Trained in theoretical systems biology and metabolic network reconstruction, my research develops and applies constraint-based modeling frameworks to map the complex biochemical interactions between microbial communities and their hosts. I specialize in constructing genome-scale metabolic models (GEMs) to simulate how microbial metabolic fluxes—particularly those governing the production of short-chain fatty acids—integrate with host metabolic and signaling networks. Typical problems in my group involve integrating multi-omics data to refine in silico representations of host-microbe metabolic exchange, analyzing pathway connectivity, and predicting how perturbations in microbial metabolism propagate to influence host cell functions. Core concepts and keywords in our work include flux balance analysis (FBA), community metabolic modeling, metabolite exchange networks, host-microbiome interactome inference, and the application of thermodynamic constraints to cross-species metabolic pathways.",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "theoretical",
+        "source_domain": "systems biology",
+        "anchor_relation": "{\"from\": \"short-chain fatty acids\", \"to\": \"metabolic network modeling of host-microbe interactions\", \"relation\": \"applies constraint-based models to simulate how microbial SCFA production fluxes influence host sensory and motility pathways\"}",
+        "object_mapping_focus": "bacterial metabolic pathways linked to SCFA synthesis mapped to host receptor signaling networks",
+        "slot_focus": "Constructs mechanistic frameworks linking microbial metabolism to host physiology, emphasizing causal inference in IBS-C versus FC pathophysiology.",
+        "contrast_hint": "Focuses on dynamic, multi-scale modeling of metabolic interactions, contrasting with descriptive profiling or clinical motility assessment."
+      }
+    },
+    {
+      "key": "translational_gastroenterology_clinical_researcher",
+      "type": "Translational Gastroenterology Clinical Researcher",
+      "expert_description": "A clinical researcher trained in gastroenterology with a dedicated focus on patient-centered phenotyping of chronic abdominal pain. Core expertise lies in the design, validation, and application of patient-reported outcome measures and quantitative sensory testing protocols to characterize visceral hypersensitivity in functional gastrointestinal disorders. Typical research involves developing standardized clinical tools to assess abdominal pain intensity, quality, and sensory thresholds, enabling stratification of patients by distinct pain phenotypes. Methodological approaches include psychophysical testing with barostat and thermal stimulation, psychometric validation of symptom diaries and questionnaires, and correlation of these clinical endpoints with underlying physiological mechanisms. Key concepts include visceral perception, allodynia, hyperalgesia, pressure-controlled distension, and the Rome diagnostic criteria, all aimed at bridging objective sensory assessment with the subjective patient experience.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "translational",
+        "source_domain": "clinical gastroenterology",
+        "anchor_relation": "{\"from\": \"visceral hypersensitivity\", \"to\": \"validated patient-reported outcome measures and sensory testing protocols\", \"relation\": \"utilizes standardized clinical tools to assess abdominal pain and sensory thresholds, enabling patient stratification by pain phenotype\"}",
+        "object_mapping_focus": "pain symptoms and sensory thresholds mapped to clinical diagnostic criteria",
+        "slot_focus": "Bridges microbiota findings to clinical practice by emphasizing pain phenotyping as a key differentiator and therapeutic target in IBS-C versus FC.",
+        "contrast_hint": "Centers on patient-level clinical assessment and translation, contrasting with molecular profiling or computational modeling approaches."
+      }
+    },
+    {
+      "key": "microbial_metabolomics_biochemist",
+      "type": "Microbial Metabolomics Biochemist",
+      "expert_description": "Trained at the intersection of analytical chemistry and microbial ecology, I have spent over fifteen years applying high-resolution mass spectrometry to dissect the chemical dialogue within the gut ecosystem. My laboratory specializes in the targeted and untargeted metabolomics of bile acid profiles, using liquid chromatography–tandem mass spectrometry (LC-MS/MS) and gas chromatography–mass spectrometry (GC-MS) to quantify primary and secondary bile acids and discover novel microbially conjugated forms. We focus on characterizing microbial bile acid modifications—including deconjugation, 7α-dehydroxylation, oxidation, and epimerization—to map specific biotransformation patterns onto the functional capacity of complex microbial communities. Our analytical pipelines integrate stable isotope tracing, enzymatic activity assays, and spectral networking to link molecular structures to the microbial taxa and genes responsible for their production. Core concepts guiding my work include bile salt hydrolase (BSH) activity, hydroxysteroid dehydrogenase (HSDH) pathways, enterohepatic circulation dynamics, and the use of metabolome-wide association studies to connect chemical phenotypes with ecological and physiological outcomes.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "empirical",
+        "source_domain": "microbial ecology",
+        "anchor_relation": "{\"from\": \"bile acids\", \"to\": \"targeted and untargeted metabolomics of bile acid profiles\", \"relation\": \"characterizes microbial bile acid modifications to link specific biotransformation patterns to colonic secretion and motility in constipation subtypes\"}",
+        "object_mapping_focus": "primary and secondary bile acid concentrations mapped to microbial enzymatic activities",
+        "slot_focus": "Examines microbial community function through bile acid metabolism as a mechanistic bridge between flora composition and constipation pathophysiology.",
+        "contrast_hint": "Emphasizes functional metabolomic readouts of microbial activity, contrasting with taxonomic profiling or host physiological measurement."
+      }
+    }
+  ],
+  "validation_issues": [],
+  "expert_similarity": {
+    "max_pairwise": 0.730793,
+    "max_pair": {
+      "member_key_a": "systems_biology_modeler",
+      "member_key_b": "microbial_metabolomics_biochemist",
+      "cosine_similarity": 0.730793
+    },
+    "pairs": [
+      {
+        "member_key_a": "computational_metagenomics_researcher",
+        "member_key_b": "gastrointestinal_motility_physiologist",
+        "cosine_similarity": 0.565143
+      },
+      {
+        "member_key_a": "computational_metagenomics_researcher",
+        "member_key_b": "systems_biology_modeler",
+        "cosine_similarity": 0.681505
+      },
+      {
+        "member_key_a": "computational_metagenomics_researcher",
+        "member_key_b": "translational_gastroenterology_clinical_researcher",
+        "cosine_similarity": 0.553259
+      },
+      {
+        "member_key_a": "computational_metagenomics_researcher",
+        "member_key_b": "microbial_metabolomics_biochemist",
+        "cosine_similarity": 0.656823
+      },
+      {
+        "member_key_a": "gastrointestinal_motility_physiologist",
+        "member_key_b": "systems_biology_modeler",
+        "cosine_similarity": 0.612452
+      },
+      {
+        "member_key_a": "gastrointestinal_motility_physiologist",
+        "member_key_b": "translational_gastroenterology_clinical_researcher",
+        "cosine_similarity": 0.660872
+      },
+      {
+        "member_key_a": "gastrointestinal_motility_physiologist",
+        "member_key_b": "microbial_metabolomics_biochemist",
+        "cosine_similarity": 0.64022
+      },
+      {
+        "member_key_a": "systems_biology_modeler",
+        "member_key_b": "translational_gastroenterology_clinical_researcher",
+        "cosine_similarity": 0.571127
+      },
+      {
+        "member_key_a": "systems_biology_modeler",
+        "member_key_b": "microbial_metabolomics_biochemist",
+        "cosine_similarity": 0.730793
+      },
+      {
+        "member_key_a": "translational_gastroenterology_clinical_researcher",
+        "member_key_b": "microbial_metabolomics_biochemist",
+        "cosine_similarity": 0.601033
+      }
+    ],
+    "threshold": 0.89
+  },
+  "domain_similarity": {
+    "native_domain": "gastroenterology and gut microbiome science",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "machine learning and bioinformatics",
+        "native_domain_cosine": 0.563089
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "gastrointestinal physiology",
+        "native_domain_cosine": 0.699422
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "systems biology",
+        "native_domain_cosine": 0.537419
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "clinical gastroenterology",
+        "native_domain_cosine": 0.67693
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "microbial ecology",
+        "native_domain_cosine": 0.640428
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.703578,
+    "max_pair_domain": {
+      "slot_a": "slot_2",
+      "slot_b": "slot_4",
+      "source_domain_a": "gastrointestinal physiology",
+      "source_domain_b": "clinical gastroenterology",
+      "cosine_similarity": 0.703578
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "machine learning and bioinformatics",
+        "source_domain_b": "gastrointestinal physiology",
+        "cosine_similarity": 0.474662
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "machine learning and bioinformatics",
+        "source_domain_b": "systems biology",
+        "cosine_similarity": 0.61057
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "machine learning and bioinformatics",
+        "source_domain_b": "clinical gastroenterology",
+        "cosine_similarity": 0.491402
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "machine learning and bioinformatics",
+        "source_domain_b": "microbial ecology",
+        "cosine_similarity": 0.565871
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "gastrointestinal physiology",
+        "source_domain_b": "systems biology",
+        "cosine_similarity": 0.560664
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "gastrointestinal physiology",
+        "source_domain_b": "clinical gastroenterology",
+        "cosine_similarity": 0.703578
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "gastrointestinal physiology",
+        "source_domain_b": "microbial ecology",
+        "cosine_similarity": 0.546519
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "systems biology",
+        "source_domain_b": "clinical gastroenterology",
+        "cosine_similarity": 0.530793
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "systems biology",
+        "source_domain_b": "microbial ecology",
+        "cosine_similarity": 0.67818
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "clinical gastroenterology",
+        "source_domain_b": "microbial ecology",
+        "cosine_similarity": 0.569038
+      }
+    ],
+    "slot_refine_log": [
+      "Slots slot_1 and slot_3 have source_domains too similar to each other (cosine 0.742 > 0.720). Spread domains apart per tier."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 2,
+    "tier": "focused",
+    "max_expert_cosine": 0.89,
+    "min_expert_cosine": 0.32,
+    "min_source_native_cosine": 0.42,
+    "max_source_native_cosine": null,
+    "max_pairwise_domain_cosine": 0.72
+  }
+}

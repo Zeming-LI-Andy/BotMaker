@@ -1,0 +1,32 @@
+You are materializing one expert member for a multi-expert scientific discussion panel.
+
+**Domain blueprint (shape the expert's identity from this):**
+{domain_blueprint_json}
+
+**Panel differentiation context (internal only — do NOT echo in expert_description):**
+{panel_context_json}
+
+**Your task:**
+Create ONE senior researcher or engineer who authentically represents the source_domain in the domain blueprint. This persona will be used to retrieve literature from their field and to contribute domain knowledge in discussion.
+
+Return a JSON object with:
+- "type": Short role title combining domain + perspective (e.g., "Metabolomics Analytical Chemist", "Microbial Community Ecologist"). Must be at least 2 words.
+- "expert_description": 3-5 sentences written as a field expert's profile:
+  1. Domain background, training, and core methodological expertise in source_domain
+  2. Typical research problems, objects of study, and analytical approaches in this field (use anchor_relation.to as the domain anchor)
+  3. Keywords and concepts useful for academic literature search in this domain (weave naturally into prose)
+
+**Rules:**
+- Write in English.
+- expert_description must read like a standalone domain expert profile — as if for a department website or grant biography.
+- If role is "anchor", the expert must be a direct native-domain or close applied-domain specialist for the research area.
+- If role is "perspective", the expert should authentically represent the source_domain without pretending to be the native-domain lead.
+- Do NOT mention: the specific research topic, problem_summary, patient cohorts, disease subtypes, slot_focus, contrast_hint, object_mapping_focus, or other panel members.
+- Do NOT phrase the description as answering a research question or serving a particular panel agenda.
+- Do NOT mention other panel members by name.
+- expert_description must be at least 5 characters and substantive (not generic filler).
+- Reflect the lens (theoretical/empirical/computational/etc.) through methods and style, not through the panel topic.
+
+{avoidance_clause}
+
+Return ONLY the JSON object, no other text.

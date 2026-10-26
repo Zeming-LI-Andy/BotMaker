@@ -1,0 +1,35 @@
+You are allocating perspective slots for a scientific discussion panel.
+
+**Research structure:**
+{research_structure_json}
+
+**Panel parameters:**
+{diversity_profile_summary}
+
+**Number of expert slots:** {num_experts}
+
+**Your task:**
+Create exactly {num_experts} perspective slots (blueprints, not named people yet). Each slot defines a DOMAIN perspective — not a research sub-question assignment.
+
+Return a JSON object with key "slots" containing an array of exactly {num_experts} objects. Each slot:
+- "slot_id": unique id like "slot_1"
+- "role": "anchor" for slot_1, "perspective" for every other slot
+- "lens": one of theoretical, empirical, computational, translational, critical (pick what fits the slot)
+- "source_domain": scientific/engineering domain for this perspective
+- "anchor_relation": object with:
+    - "from": a problem-side object from core_relations (what aspect of the problem this slot engages)
+    - "to": the slot's core construct IN source_domain (methods, entities, or concepts native to that field — NOT patient labels, disease subtypes, or the research question itself)
+    - "relation": how the domain uses "to" to analyze "from"
+- "object_mapping_focus": brief note on how problem objects map into source_domain (for slot design only)
+- "slot_focus": one sentence on what functional aspect this domain perspective emphasizes (NOT a research sub-question)
+- "contrast_hint": how this slot differs from other slots (per tier guidance)
+
+**Rules:**
+1. slot_1 must be the anchor: role="anchor", source_domain must be the native domain or a very close applied subfield, and it should represent the conventional expert most directly matched to the research topic.
+2. All other slots must use role="perspective".
+3. Differentiate perspective slots primarily by source_domain, lens, and anchor_relation.to — not by splitting the research into Q&A items.
+4. Follow the allocation tier guidance strictly for source_domain choice.
+5. Do not add slots whose only purpose is a cross-domain analogy unless tier is DIVERSE.
+6. Each slot_focus must describe a domain angle, not restate problem_summary or ask a question.
+
+Return ONLY the JSON object, no other text.

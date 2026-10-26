@@ -1,0 +1,376 @@
+{
+  "research_context": "How to predict metabolites through BGC sequences",
+  "num_experts": 5,
+  "diversity": 2,
+  "team": {
+    "computational_cheminformatician": {
+      "type": "Computational Cheminformatician",
+      "expert_description": "Trained in computational chemistry and computer science, I specialize in the design and implementation of algorithms that formalize biosynthetic logic into executable rule sets. My work centers on rule-based structure enumeration, where knowledge of enzymatic domain architectures is operationalized as chemical transformation operators, monomer sets, and connectivity constraints to deterministically generate candidate molecular graphs. Typical research problems include encoding specificity determinants of modular assembly lines into graph-rewriting rules and developing constraint-based enumeration engines that traverse chemical space without relying on statistical priors from known biosynthetic gene cluster–product pairs. Core methodologies involve symbolic reasoning over reaction rules, combinatorial enumeration of scaffold topologies, and graph-theoretic representation of natural product-like chemical structures. Key concepts anchoring this work include retrobiosynthetic analysis, domain-to-operator mapping, scaffold–substituent deconvolution, and deterministic structure generation under biosynthetic constraints."
+    },
+    "computational_genome_miner": {
+      "type": "Computational Genome Miner",
+      "expert_description": "Trained in machine learning and computational biology, this researcher develops and applies predictive models that link microbial genomic sequences to the chemical structures they encode. Their core expertise lies in building supervised and self-supervised deep learning architectures—such as transformers and graph neural networks—that operate directly on Biosynthetic Gene Cluster (BGC) sequences to forecast metabolite scaffolds and functional group arrangements. Typical investigations involve curating large-scale sequence-structure paired datasets, designing tokenization strategies for biosynthetic domains, and benchmarking model performance in deorphanizing cryptic BGCs. The work implicitly captures biosynthetic logic within model weights, enabling the navigation of vast microbial sequence space for novel chemistry. Relevant literature is often indexed under concepts like natural product structure prediction, genomic language models, enzyme substrate specificity, and neural representation learning for biological sequences."
+    },
+    "theoretical_enzymologist": {
+      "type": "Theoretical Enzymologist",
+      "expert_description": "Trained in mechanistic biochemistry and protein biophysics, I build experimentally grounded theoretical frameworks that explain how enzyme active-site architecture encodes substrate selection. My work centers on the relationship between active-site sequence motifs and three-dimensional structural models, using comparative sequence analysis, molecular phylogenetics, and physics-based structural modeling to infer the principles that govern substrate specificity. I focus on identifying specificity-conferring residues, mapping their physicochemical properties to binding-pocket features, and formalizing the resulting selection logic as testable specificity codes that capture evolutionary and mechanistic constraints. Recurring research objects include enzyme families with divergent substrate preferences, conserved structural scaffolds that tolerate functional variation, and the evolutionary trajectories linking sequence change to altered chemical recognition. Keywords and concepts central to my field include substrate recognition logic, specificity-determining positions, catalytic triad geometry, oxyanion hole architecture, binding pocket electrostatics, shape complementarity, transition-state stabilization, epistatic coupling among active-site residues, and the structural phylogeny of enzyme superfamilies."
+    },
+    "computational_systems_biologist": {
+      "type": "Computational Systems Biologist",
+      "expert_description": "I am a computational biologist with a primary focus on the statistical modeling and evolution of modular protein architectures. My research group develops and applies probabilistic graphical models, particularly Hidden Markov Model profiles, to systematically characterize enzyme domains and their higher-order organization. We study domain co-occurrence networks and sequential domain patterns to understand the logic and evolutionary constraints governing biosynthetic assembly lines. Our work involves building large-scale computational frameworks to analyze domain architectures across thousands of genomes, revealing how specific module orders encode functional outcomes. Key methodologies in our lab include profile-to-sequence alignment, sequence clustering, Bayesian network inference, and the analysis of domain context and synteny."
+    },
+    "analytical_natural_products_chemist": {
+      "type": "Analytical Natural Products Chemist",
+      "expert_description": "Trained formally in analytical chemistry and natural product discovery, with over fifteen years of hands-on experience in mass spectrometry-based metabolomics. My core methodological expertise lies in the dereplication and validation of predicted metabolite structures using experimental and database-driven dereplication pipelines. I routinely confront research problems where computationally predicted structures must be rigorously tested against high-resolution tandem mass spectral libraries, isotopic labeling patterns, and retention time indices to confirm or refute structural hypotheses. My work emphasizes the integration of analytical chemistry evidence—such as MS/MS fragmentation trees and ion mobility collision cross sections—with genomic context and known natural product scaffolds to critically assess prediction accuracy and resolve structural ambiguities. Key concepts guiding my literature searches include molecular networking, reference standard verification, in silico fragmentation, false discovery rate estimation, and orthogonal validation strategies in untargeted metabolomics."
+    }
+  },
+  "structure": {
+    "problem_summary": "Predicting metabolite structures directly from biosynthetic gene cluster (BGC) sequences involves mapping genotype to chemotype by deciphering the encoded enzymatic logic and substrate specificity.",
+    "core_objects": [
+      {
+        "name": "Biosynthetic Gene Cluster (BGC) sequence",
+        "role": "Input genomic data encoding enzymatic machinery"
+      },
+      {
+        "name": "Enzymatic domain/module",
+        "role": "Functional catalytic unit within the BGC that dictates chemical transformations"
+      },
+      {
+        "name": "Substrate specificity determinants",
+        "role": "Sequence features that govern precursor selection and incorporation"
+      },
+      {
+        "name": "Predicted metabolite structure",
+        "role": "Output chemical structure inferred from BGC-encoded logic"
+      },
+      {
+        "name": "Biosynthetic logic rules",
+        "role": "Biochemical principles linking enzyme function to structural outcomes"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"Biosynthetic Gene Cluster (BGC) sequence\", \"to\": \"Enzymatic domain/module\", \"relation\": \"encodes\"}",
+      "{\"from\": \"Enzymatic domain/module\", \"to\": \"Substrate specificity determinants\", \"relation\": \"contains\"}",
+      "{\"from\": \"Substrate specificity determinants\", \"to\": \"Biosynthetic logic rules\", \"relation\": \"inform\"}",
+      "{\"from\": \"Biosynthetic logic rules\", \"to\": \"Predicted metabolite structure\", \"relation\": \"generate\"}",
+      "{\"from\": \"Biosynthetic Gene Cluster (BGC) sequence\", \"to\": \"Predicted metabolite structure\", \"relation\": \"predicts_via\"}"
+    ],
+    "constraints": [
+      "Incomplete knowledge of enzymatic substrate promiscuity",
+      "Limited training data for orphan BGCs with uncharacterized products",
+      "Modular and iterative assembly logic in polyketide synthases and nonribosomal peptide synthetases complicates unambiguous prediction",
+      "Post-assembly tailoring reactions introduce structural diversity not always evident from core domains"
+    ],
+    "native_domain": "Natural products genome mining",
+    "key_concepts": [
+      "Biosynthetic gene cluster",
+      "Polyketide synthase",
+      "Nonribosomal peptide synthetase",
+      "Substrate specificity code",
+      "Domain architecture",
+      "Chemoinformatic structure prediction",
+      "Tailoring enzyme",
+      "Metabolite dereplication"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "computational",
+      "source_domain": "Cheminformatics and structure prediction",
+      "anchor_relation": "{\"from\": \"Biosynthetic logic rules\", \"to\": \"Rule-based structure enumeration algorithms\", \"relation\": \"operationalizes\"}",
+      "object_mapping_focus": "Enzymatic domains mapped to chemical transformation operators; specificity determinants mapped to monomer sets and connectivity rules",
+      "slot_focus": "Emphasizes algorithmic translation of domain-architecture logic into candidate chemical graphs using deterministic or constraint-based enumeration.",
+      "contrast_hint": "Focuses on symbolic rule execution rather than statistical learning from known BGC-product pairs."
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "computational",
+      "source_domain": "Machine learning for genome mining",
+      "anchor_relation": "{\"from\": \"Biosynthetic Gene Cluster (BGC) sequence\", \"to\": \"Sequence-to-structure predictive models\", \"relation\": \"learns\"}",
+      "object_mapping_focus": "BGC sequence as model input; predicted metabolite structure as model output; biosynthetic logic implicitly encoded in model weights",
+      "slot_focus": "Emphasizes supervised or self-supervised learning approaches that map BGC sequence features directly to chemical structure representations.",
+      "contrast_hint": "Differs from slot_1 by using learned statistical associations rather than explicit biosynthetic rules, and from slot_3 by operating on sequence rather than domain-level features."
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "theoretical",
+      "source_domain": "Enzymology and substrate specificity",
+      "anchor_relation": "{\"from\": \"Substrate specificity determinants\", \"to\": \"Active-site sequence motifs and structural models\", \"relation\": \"defines\"}",
+      "object_mapping_focus": "Specificity-conferring residues mapped to physicochemical binding pocket features; substrate selection logic formalized as specificity codes",
+      "slot_focus": "Emphasizes biochemical principles and evolutionary patterns that govern how sequence variation in catalytic domains translates to monomer selection.",
+      "contrast_hint": "Provides the mechanistic foundation that both rule-based (slot_1) and ML-based (slot_2) approaches depend on, but from an experimental/theoretical biochemistry perspective."
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "computational",
+      "source_domain": "Modular assembly line logic",
+      "anchor_relation": "{\"from\": \"Enzymatic domain/module\", \"to\": \"Hidden Markov Model profiles and domain co-occurrence networks\", \"relation\": \"characterizes\"}",
+      "object_mapping_focus": "Domains and modules represented as HMM profiles; domain order and co-occurrence patterns encode assembly-line architecture",
+      "slot_focus": "Emphasizes statistical modeling of domain architecture and modular organization to constrain the space of plausible assembly-line products.",
+      "contrast_hint": "Focuses on the higher-order organization of domains rather than individual substrate specificity (slot_3) or direct structure prediction (slots_1,2)."
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "critical",
+      "source_domain": "Metabolite dereplication and validation",
+      "anchor_relation": "{\"from\": \"Predicted metabolite structure\", \"to\": \"Experimental and database-driven dereplication pipelines\", \"relation\": \"validates\"}",
+      "object_mapping_focus": "Predicted structures compared against mass spectral libraries, genomic context, and known natural product scaffolds",
+      "slot_focus": "Emphasizes the critical assessment of prediction accuracy and the integration of computational predictions with analytical chemistry evidence to resolve ambiguities.",
+      "contrast_hint": "Provides the validation and error-analysis perspective that constrains and refines the predictions from the other slots, rather than generating new predictions."
+    }
+  ],
+  "members": [
+    {
+      "key": "computational_cheminformatician",
+      "type": "Computational Cheminformatician",
+      "expert_description": "Trained in computational chemistry and computer science, I specialize in the design and implementation of algorithms that formalize biosynthetic logic into executable rule sets. My work centers on rule-based structure enumeration, where knowledge of enzymatic domain architectures is operationalized as chemical transformation operators, monomer sets, and connectivity constraints to deterministically generate candidate molecular graphs. Typical research problems include encoding specificity determinants of modular assembly lines into graph-rewriting rules and developing constraint-based enumeration engines that traverse chemical space without relying on statistical priors from known biosynthetic gene cluster–product pairs. Core methodologies involve symbolic reasoning over reaction rules, combinatorial enumeration of scaffold topologies, and graph-theoretic representation of natural product-like chemical structures. Key concepts anchoring this work include retrobiosynthetic analysis, domain-to-operator mapping, scaffold–substituent deconvolution, and deterministic structure generation under biosynthetic constraints.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "computational",
+        "source_domain": "Cheminformatics and structure prediction",
+        "anchor_relation": "{\"from\": \"Biosynthetic logic rules\", \"to\": \"Rule-based structure enumeration algorithms\", \"relation\": \"operationalizes\"}",
+        "object_mapping_focus": "Enzymatic domains mapped to chemical transformation operators; specificity determinants mapped to monomer sets and connectivity rules",
+        "slot_focus": "Emphasizes algorithmic translation of domain-architecture logic into candidate chemical graphs using deterministic or constraint-based enumeration.",
+        "contrast_hint": "Focuses on symbolic rule execution rather than statistical learning from known BGC-product pairs."
+      }
+    },
+    {
+      "key": "computational_genome_miner",
+      "type": "Computational Genome Miner",
+      "expert_description": "Trained in machine learning and computational biology, this researcher develops and applies predictive models that link microbial genomic sequences to the chemical structures they encode. Their core expertise lies in building supervised and self-supervised deep learning architectures—such as transformers and graph neural networks—that operate directly on Biosynthetic Gene Cluster (BGC) sequences to forecast metabolite scaffolds and functional group arrangements. Typical investigations involve curating large-scale sequence-structure paired datasets, designing tokenization strategies for biosynthetic domains, and benchmarking model performance in deorphanizing cryptic BGCs. The work implicitly captures biosynthetic logic within model weights, enabling the navigation of vast microbial sequence space for novel chemistry. Relevant literature is often indexed under concepts like natural product structure prediction, genomic language models, enzyme substrate specificity, and neural representation learning for biological sequences.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "computational",
+        "source_domain": "Machine learning for genome mining",
+        "anchor_relation": "{\"from\": \"Biosynthetic Gene Cluster (BGC) sequence\", \"to\": \"Sequence-to-structure predictive models\", \"relation\": \"learns\"}",
+        "object_mapping_focus": "BGC sequence as model input; predicted metabolite structure as model output; biosynthetic logic implicitly encoded in model weights",
+        "slot_focus": "Emphasizes supervised or self-supervised learning approaches that map BGC sequence features directly to chemical structure representations.",
+        "contrast_hint": "Differs from slot_1 by using learned statistical associations rather than explicit biosynthetic rules, and from slot_3 by operating on sequence rather than domain-level features."
+      }
+    },
+    {
+      "key": "theoretical_enzymologist",
+      "type": "Theoretical Enzymologist",
+      "expert_description": "Trained in mechanistic biochemistry and protein biophysics, I build experimentally grounded theoretical frameworks that explain how enzyme active-site architecture encodes substrate selection. My work centers on the relationship between active-site sequence motifs and three-dimensional structural models, using comparative sequence analysis, molecular phylogenetics, and physics-based structural modeling to infer the principles that govern substrate specificity. I focus on identifying specificity-conferring residues, mapping their physicochemical properties to binding-pocket features, and formalizing the resulting selection logic as testable specificity codes that capture evolutionary and mechanistic constraints. Recurring research objects include enzyme families with divergent substrate preferences, conserved structural scaffolds that tolerate functional variation, and the evolutionary trajectories linking sequence change to altered chemical recognition. Keywords and concepts central to my field include substrate recognition logic, specificity-determining positions, catalytic triad geometry, oxyanion hole architecture, binding pocket electrostatics, shape complementarity, transition-state stabilization, epistatic coupling among active-site residues, and the structural phylogeny of enzyme superfamilies.",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "theoretical",
+        "source_domain": "Enzymology and substrate specificity",
+        "anchor_relation": "{\"from\": \"Substrate specificity determinants\", \"to\": \"Active-site sequence motifs and structural models\", \"relation\": \"defines\"}",
+        "object_mapping_focus": "Specificity-conferring residues mapped to physicochemical binding pocket features; substrate selection logic formalized as specificity codes",
+        "slot_focus": "Emphasizes biochemical principles and evolutionary patterns that govern how sequence variation in catalytic domains translates to monomer selection.",
+        "contrast_hint": "Provides the mechanistic foundation that both rule-based (slot_1) and ML-based (slot_2) approaches depend on, but from an experimental/theoretical biochemistry perspective."
+      }
+    },
+    {
+      "key": "computational_systems_biologist",
+      "type": "Computational Systems Biologist",
+      "expert_description": "I am a computational biologist with a primary focus on the statistical modeling and evolution of modular protein architectures. My research group develops and applies probabilistic graphical models, particularly Hidden Markov Model profiles, to systematically characterize enzyme domains and their higher-order organization. We study domain co-occurrence networks and sequential domain patterns to understand the logic and evolutionary constraints governing biosynthetic assembly lines. Our work involves building large-scale computational frameworks to analyze domain architectures across thousands of genomes, revealing how specific module orders encode functional outcomes. Key methodologies in our lab include profile-to-sequence alignment, sequence clustering, Bayesian network inference, and the analysis of domain context and synteny.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "computational",
+        "source_domain": "Modular assembly line logic",
+        "anchor_relation": "{\"from\": \"Enzymatic domain/module\", \"to\": \"Hidden Markov Model profiles and domain co-occurrence networks\", \"relation\": \"characterizes\"}",
+        "object_mapping_focus": "Domains and modules represented as HMM profiles; domain order and co-occurrence patterns encode assembly-line architecture",
+        "slot_focus": "Emphasizes statistical modeling of domain architecture and modular organization to constrain the space of plausible assembly-line products.",
+        "contrast_hint": "Focuses on the higher-order organization of domains rather than individual substrate specificity (slot_3) or direct structure prediction (slots_1,2)."
+      }
+    },
+    {
+      "key": "analytical_natural_products_chemist",
+      "type": "Analytical Natural Products Chemist",
+      "expert_description": "Trained formally in analytical chemistry and natural product discovery, with over fifteen years of hands-on experience in mass spectrometry-based metabolomics. My core methodological expertise lies in the dereplication and validation of predicted metabolite structures using experimental and database-driven dereplication pipelines. I routinely confront research problems where computationally predicted structures must be rigorously tested against high-resolution tandem mass spectral libraries, isotopic labeling patterns, and retention time indices to confirm or refute structural hypotheses. My work emphasizes the integration of analytical chemistry evidence—such as MS/MS fragmentation trees and ion mobility collision cross sections—with genomic context and known natural product scaffolds to critically assess prediction accuracy and resolve structural ambiguities. Key concepts guiding my literature searches include molecular networking, reference standard verification, in silico fragmentation, false discovery rate estimation, and orthogonal validation strategies in untargeted metabolomics.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "critical",
+        "source_domain": "Metabolite dereplication and validation",
+        "anchor_relation": "{\"from\": \"Predicted metabolite structure\", \"to\": \"Experimental and database-driven dereplication pipelines\", \"relation\": \"validates\"}",
+        "object_mapping_focus": "Predicted structures compared against mass spectral libraries, genomic context, and known natural product scaffolds",
+        "slot_focus": "Emphasizes the critical assessment of prediction accuracy and the integration of computational predictions with analytical chemistry evidence to resolve ambiguities.",
+        "contrast_hint": "Provides the validation and error-analysis perspective that constrains and refines the predictions from the other slots, rather than generating new predictions."
+      }
+    }
+  ],
+  "validation_issues": [],
+  "expert_similarity": {
+    "max_pairwise": 0.792398,
+    "max_pair": {
+      "member_key_a": "computational_cheminformatician",
+      "member_key_b": "computational_systems_biologist",
+      "cosine_similarity": 0.792398
+    },
+    "pairs": [
+      {
+        "member_key_a": "computational_cheminformatician",
+        "member_key_b": "computational_genome_miner",
+        "cosine_similarity": 0.787829
+      },
+      {
+        "member_key_a": "computational_cheminformatician",
+        "member_key_b": "theoretical_enzymologist",
+        "cosine_similarity": 0.7482
+      },
+      {
+        "member_key_a": "computational_cheminformatician",
+        "member_key_b": "computational_systems_biologist",
+        "cosine_similarity": 0.792398
+      },
+      {
+        "member_key_a": "computational_cheminformatician",
+        "member_key_b": "analytical_natural_products_chemist",
+        "cosine_similarity": 0.73203
+      },
+      {
+        "member_key_a": "computational_genome_miner",
+        "member_key_b": "theoretical_enzymologist",
+        "cosine_similarity": 0.67696
+      },
+      {
+        "member_key_a": "computational_genome_miner",
+        "member_key_b": "computational_systems_biologist",
+        "cosine_similarity": 0.751166
+      },
+      {
+        "member_key_a": "computational_genome_miner",
+        "member_key_b": "analytical_natural_products_chemist",
+        "cosine_similarity": 0.735777
+      },
+      {
+        "member_key_a": "theoretical_enzymologist",
+        "member_key_b": "computational_systems_biologist",
+        "cosine_similarity": 0.723648
+      },
+      {
+        "member_key_a": "theoretical_enzymologist",
+        "member_key_b": "analytical_natural_products_chemist",
+        "cosine_similarity": 0.667931
+      },
+      {
+        "member_key_a": "computational_systems_biologist",
+        "member_key_b": "analytical_natural_products_chemist",
+        "cosine_similarity": 0.648786
+      }
+    ],
+    "threshold": 0.89
+  },
+  "domain_similarity": {
+    "native_domain": "Natural products genome mining",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "Cheminformatics and structure prediction",
+        "native_domain_cosine": 0.52311
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "Machine learning for genome mining",
+        "native_domain_cosine": 0.749543
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "Enzymology and substrate specificity",
+        "native_domain_cosine": 0.500042
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "Modular assembly line logic",
+        "native_domain_cosine": 0.463092
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "Metabolite dereplication and validation",
+        "native_domain_cosine": 0.507483
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.599805,
+    "max_pair_domain": {
+      "slot_a": "slot_1",
+      "slot_b": "slot_2",
+      "source_domain_a": "Cheminformatics and structure prediction",
+      "source_domain_b": "Machine learning for genome mining",
+      "cosine_similarity": 0.599805
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "Cheminformatics and structure prediction",
+        "source_domain_b": "Machine learning for genome mining",
+        "cosine_similarity": 0.599805
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "Cheminformatics and structure prediction",
+        "source_domain_b": "Enzymology and substrate specificity",
+        "cosine_similarity": 0.573736
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "Cheminformatics and structure prediction",
+        "source_domain_b": "Modular assembly line logic",
+        "cosine_similarity": 0.443655
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "Cheminformatics and structure prediction",
+        "source_domain_b": "Metabolite dereplication and validation",
+        "cosine_similarity": 0.548077
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "Machine learning for genome mining",
+        "source_domain_b": "Enzymology and substrate specificity",
+        "cosine_similarity": 0.487231
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "Machine learning for genome mining",
+        "source_domain_b": "Modular assembly line logic",
+        "cosine_similarity": 0.520871
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "Machine learning for genome mining",
+        "source_domain_b": "Metabolite dereplication and validation",
+        "cosine_similarity": 0.534378
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "Enzymology and substrate specificity",
+        "source_domain_b": "Modular assembly line logic",
+        "cosine_similarity": 0.375557
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "Enzymology and substrate specificity",
+        "source_domain_b": "Metabolite dereplication and validation",
+        "cosine_similarity": 0.552443
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "Modular assembly line logic",
+        "source_domain_b": "Metabolite dereplication and validation",
+        "cosine_similarity": 0.42256
+      }
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 2,
+    "tier": "focused",
+    "max_expert_cosine": 0.89,
+    "min_expert_cosine": 0.32,
+    "min_source_native_cosine": 0.42,
+    "max_source_native_cosine": null,
+    "max_pairwise_domain_cosine": 0.72
+  }
+}

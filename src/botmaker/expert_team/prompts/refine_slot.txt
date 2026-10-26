@@ -1,0 +1,17 @@
+You are revising ONE perspective slot for a scientific panel because programmatic checks flagged a domain mismatch.
+
+**Research summary:** {problem_summary}
+**Native domain:** {native_domain}
+
+**Current slot:**
+{slot_json}
+
+**Revision requirement:**
+{revision_requirement}
+
+**Other slots' source domains (avoid duplicating unless focused tier):**
+{other_domains}
+
+Return a JSON object with the same fields as the slot (slot_id, role, lens, source_domain, anchor_relation, object_mapping_focus, slot_focus, contrast_hint). Keep slot_id and slot_focus unless the requirement says otherwise. If the requirement asks for an anchor, set role="anchor" and use the native domain or a close applied subfield. If the requirement asks for a non-anchor perspective, set role="perspective".
+
+Return ONLY the JSON object, no other text.

@@ -1,0 +1,374 @@
+{
+  "research_context": "The relationship between metabolites and aging",
+  "num_experts": 5,
+  "diversity": 2,
+  "team": {
+    "chronobiology_metabolomics_researcher": {
+      "type": "Chronobiology Metabolomics Researcher",
+      "expert_description": "Trained as a systems biologist with a focus on temporal metabolism, I specialize in mapping metabolite rhythms across tissues and timescales using longitudinal mass spectrometry and nuclear magnetic resonance spectroscopy. My research centers on identifying temporal metabolite oscillations that become dysregulated with age and may drive aging hallmarks, employing dense time-series sampling and computational rhythm detection to disentangle circadian and infradian components of the metabolome. I routinely work with high-resolution liquid chromatography-mass spectrometry platforms, cosine similarity-based rhythm scoring, and multivariate models that link metabolite phase shifts to functional readouts of tissue aging. Key concepts guiding my work include chronometabolomics, peripheral circadian clocks, phase amplitude analysis, and the temporal architecture of metabolite networks."
+    },
+    "metabolic_network_theorist": {
+      "type": "Metabolic Network Theorist",
+      "expert_description": "Dr. Alistair Vance is a senior researcher trained in systems biology and theoretical biochemistry, specializing in the constraint-based reconstruction and kinetic modeling of metabolic networks. His work formalizes metabolic pathways as stoichiometric matrices to compute feasible flux distributions and predict how perturbations—such as enzyme kinetic alterations—propagate through interconnected modules. Typical objects of study include genome-scale metabolic models (GEMs), elementary flux modes, and Michaelis-Menten kinetics embedded in ordinary differential equation systems, all analyzed through optimization frameworks like flux balance analysis (FBA) and metabolic control analysis (MCA). By integrating enzyme turnover data and thermodynamic constraints, he dissects how network topology and regulatory loops determine steady-state metabolite concentrations, distinguishing between rate-limiting steps and passive overflow effects. His computational expertise spans linear programming, parameter sensitivity analysis, and the use of platforms such as COBRApy and COPASI, with deep knowledge of concepts like futile cycles, moiety conservation, and redox cofactor balancing."
+    },
+    "translational_pharmacometabolomics_researcher": {
+      "type": "Translational Pharmacometabolomics Researcher",
+      "expert_description": "Trained in pharmacology and analytical biochemistry, I specialize in translational pharmacometabolomics, using targeted and untargeted mass spectrometry to map how endogenous metabolites interface with drug action and disease processes. My research centers on evaluating how exogenous modulation of metabolite levels or their sensors can recapitulate or block aging hallmarks, treating metabolites as druggable nodes that can be fine-tuned through enzyme-targeted interventions or metabolite mimetics. I design and validate small-molecule and dietary interventions in preclinical models, measuring their impact on healthspan through metabolomic flux analysis, lifespan assays, and functional phenotyping. Core methodologies include stable isotope tracing, high-resolution metabolomics, and pharmacodynamic modeling, integrated with assays for mitochondrial function and proteostasis. Keywords central to my work include caloric restriction mimetics, endogenous metabolite mimetics, enzyme-targeted interventions, healthspan extension, metabolomics-driven drug discovery, NAD+ metabolism, sirtuin activators, and mTOR modulation."
+    },
+    "computational_epigeneticist": {
+      "type": "Computational Epigeneticist",
+      "expert_description": "Trained in computational biology and biostatistics, I specialize in developing and validating DNA methylation-based and multi-omic aging clocks. My work centers on constructing high-dimensional regression models—such as elastic net and deep neural networks—that integrate epigenome-wide CpG methylation data with transcriptomic, proteomic, and metabolomic profiles to produce robust estimators of biological age. I routinely investigate how specific metabolite concentrations, when added as predictor variables or mediator features in clock algorithms, shift predicted age acceleration or deceleration, thereby linking systemic biochemistry to epigenetic maintenance. My analytical toolkit includes feature selection on array-based and sequencing-based methylation data, multi-omic data harmonization, and survival modeling to test clock associations with healthspan outcomes. Core concepts guiding my literature searches include Horvath’s pan-tissue clock, PhenoAge, GrimAge, DNA methylation variability, epigenetic drift, and metabolome-wide association studies integrated with epigenetic readouts."
+    },
+    "redox_signaling_theoretical_biochemist": {
+      "type": "Redox Signaling Theoretical Biochemist",
+      "expert_description": "Trained in mechanistic biochemistry and biophysical chemistry, my research group focuses on developing theoretical frameworks for how mitochondrial metabolites act as signaling entities. We specialize in parsing the chemical logic by which specific redox-active species—such as NAD+, α-ketoglutarate, and reactive oxygen species (ROS)—engage in non-enzymatic or enzyme-directed post-translational modifications. Our core methodology involves constructing detailed reaction models and kinetic simulations to predict how fluctuations in metabolite pools are transduced into covalent changes on proteins, including acylation and carbonylation. We typically study the fundamental principles governing metabolite electrophilicity, nucleophilic targets on macromolecules, and the resulting allosteric or functional consequences that alter cellular information flow. Key concepts that guide our work include redox potential landscapes, mitochondrial retrograde signaling, thiol-disulfide switches, lysine acylation stoichiometry, and the chemical basis of hormetic dose-response curves."
+    }
+  },
+  "structure": {
+    "problem_summary": "Investigating how endogenous small-molecule metabolites mechanistically regulate the rate and hallmarks of biological aging, and whether their manipulation can modify healthspan and lifespan.",
+    "core_objects": [
+      {
+        "name": "Metabolites",
+        "role": "Small-molecule intermediates or end-products of cellular metabolism that act as signaling molecules, substrates, or damage agents in aging processes."
+      },
+      {
+        "name": "Aging hallmarks",
+        "role": "The set of cellular and molecular phenotypes (e.g., genomic instability, mitochondrial dysfunction, epigenetic alterations) that characterize the aging process and serve as functional readouts."
+      },
+      {
+        "name": "Metabolic pathways",
+        "role": "The enzymatic reaction networks that produce, consume, or sense metabolites and are subject to age-related dysregulation."
+      },
+      {
+        "name": "Organismal healthspan",
+        "role": "The period of life free from major age-related disease and functional decline, representing the ultimate phenotypic outcome of interest."
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"Metabolites\", \"to\": \"Aging hallmarks\", \"relation\": \"directly modulate through mechanisms such as post-translational modification, epigenetic regulation, or oxidative damage\"}",
+      "{\"from\": \"Metabolic pathways\", \"to\": \"Metabolites\", \"relation\": \"control the abundance and flux of specific metabolites, which become altered with age\"}",
+      "{\"from\": \"Aging hallmarks\", \"to\": \"Organismal healthspan\", \"relation\": \"cumulatively drive the progressive loss of physiological integrity and functional decline\"}",
+      "{\"from\": \"Metabolites\", \"to\": \"Organismal healthspan\", \"relation\": \"influence through systemic inter-tissue signaling and nutrient-sensing network modulation\"}"
+    ],
+    "constraints": [
+      "Causal directionality between metabolite changes and aging is often confounded by reverse causation.",
+      "Metabolite measurements are highly dynamic and sensitive to diet, microbiome, and circadian rhythms.",
+      "Tissue-specific vs. systemic metabolite effects are difficult to disentangle in vivo.",
+      "Translation from model organisms to humans is limited by metabolic network differences and lifespan scale."
+    ],
+    "native_domain": "Metabolism and aging biology",
+    "key_concepts": [
+      "Metabolomics",
+      "Senescence",
+      "Nutrient sensing",
+      "Mitochondrial metabolism",
+      "Redox homeostasis",
+      "Epigenetic clocks",
+      "Caloric restriction mimetics",
+      "Metabolic flux analysis"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "empirical",
+      "source_domain": "Chronobiology",
+      "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"circadian and infradian rhythm analyses\", \"relation\": \"identifies temporal metabolite oscillations that become dysregulated with age and may drive aging hallmarks\"}",
+      "object_mapping_focus": "Metabolites are captured as rhythmic features in longitudinal time-series datasets; aging hallmarks serve as decoupling anchors for circadian-metabolic misalignment.",
+      "slot_focus": "Systematic characterization of the aging metabolome across tissues and time to pinpoint metabolites with causal signatures.",
+      "contrast_hint": "Focuses on discovery-driven profiling and temporal oscillation measurement, differing from pathway-centric or mechanistic perturbation approaches."
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "theoretical",
+      "source_domain": "Metabolic network modeling",
+      "anchor_relation": "{\"from\": \"Metabolic pathways\", \"to\": \"constraint-based and kinetic models of metabolic networks\", \"relation\": \"predicts how age-driven enzyme changes reroute metabolite fluxes and alter steady-state concentrations\"}",
+      "object_mapping_focus": "Metabolic pathways are formalized as stoichiometric matrices; metabolites are node outputs whose predicted shifts are compared against aging hallmarks.",
+      "slot_focus": "In silico dissection of network-level constraints that dictate which metabolite changes are primary drivers versus secondary consequences of aging.",
+      "contrast_hint": "Emphasizes computational reconstruction of pathway logic and flux distributions, contrasting with observational metabolomics or reductionist mitochondrial biochemistry."
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "translational",
+      "source_domain": "Pharmacometabolomics",
+      "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"endogenous metabolite mimetics and enzyme-targeted interventions\", \"relation\": \"evaluates how exogenous modulation of metabolite levels or their sensors can recapitulate or block aging hallmarks\"}",
+      "object_mapping_focus": "Metabolites are treated as druggable nodes; organismal healthspan becomes the endpoint for intervention studies inspired by caloric restriction mimetics.",
+      "slot_focus": "Bridging metabolite biology to therapeutic design by validating whether metabolite-based interventions extend healthspan in preclinical models.",
+      "contrast_hint": "Translation-oriented with explicit focus on intervention design, unlike descriptive metabolomics or mechanistic redox signaling approaches."
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "computational",
+      "source_domain": "Epigenetic aging clocks",
+      "anchor_relation": "{\"from\": \"Aging hallmarks\", \"to\": \"DNA methylation-based and multi-omic aging clocks\", \"relation\": \"integrates metabolite data with epigenetic readouts to test whether specific metabolites accelerate or decelerate predicted biological age\"}",
+      "object_mapping_focus": "Aging hallmarks are summarized as clock-derived age estimates; metabolites serve as predictor variables or mediators in clock models.",
+      "slot_focus": "Leveraging aging clocks as integrative biomarkers to quantify the net effect of metabolite fluctuations on biological aging rate.",
+      "contrast_hint": "Uses algorithmic age prediction as a lens, contrasting with direct molecular mechanism studies or pathway-level metabolic network analysis."
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "theoretical",
+      "source_domain": "Redox signaling and mitochondrial biology",
+      "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"reactive metabolite species and redox-sensitive signaling cascades\", \"relation\": \"mechanistically links specific metabolites (e.g., NAD+, α-ketoglutarate, ROS) to post-translational modifications and epigenetic changes that drive hallmark acquisition\"}",
+      "object_mapping_focus": "Metabolites are parsed by their redox and signaling properties; aging hallmarks are the downstream targets of modification (e.g., histone acylation, protein carbonylation).",
+      "slot_focus": "Elucidating the causal biochemical logic by which redox-active metabolites directly modify macromolecules to enact aging hallmarks.",
+      "contrast_hint": "Centers on proximal chemical mechanisms and mitochondrial-metabolite crosstalk, distinct from systems-level metabolomics or translational intervention screening."
+    }
+  ],
+  "members": [
+    {
+      "key": "chronobiology_metabolomics_researcher",
+      "type": "Chronobiology Metabolomics Researcher",
+      "expert_description": "Trained as a systems biologist with a focus on temporal metabolism, I specialize in mapping metabolite rhythms across tissues and timescales using longitudinal mass spectrometry and nuclear magnetic resonance spectroscopy. My research centers on identifying temporal metabolite oscillations that become dysregulated with age and may drive aging hallmarks, employing dense time-series sampling and computational rhythm detection to disentangle circadian and infradian components of the metabolome. I routinely work with high-resolution liquid chromatography-mass spectrometry platforms, cosine similarity-based rhythm scoring, and multivariate models that link metabolite phase shifts to functional readouts of tissue aging. Key concepts guiding my work include chronometabolomics, peripheral circadian clocks, phase amplitude analysis, and the temporal architecture of metabolite networks.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "empirical",
+        "source_domain": "Chronobiology",
+        "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"circadian and infradian rhythm analyses\", \"relation\": \"identifies temporal metabolite oscillations that become dysregulated with age and may drive aging hallmarks\"}",
+        "object_mapping_focus": "Metabolites are captured as rhythmic features in longitudinal time-series datasets; aging hallmarks serve as decoupling anchors for circadian-metabolic misalignment.",
+        "slot_focus": "Systematic characterization of the aging metabolome across tissues and time to pinpoint metabolites with causal signatures.",
+        "contrast_hint": "Focuses on discovery-driven profiling and temporal oscillation measurement, differing from pathway-centric or mechanistic perturbation approaches."
+      }
+    },
+    {
+      "key": "metabolic_network_theorist",
+      "type": "Metabolic Network Theorist",
+      "expert_description": "Dr. Alistair Vance is a senior researcher trained in systems biology and theoretical biochemistry, specializing in the constraint-based reconstruction and kinetic modeling of metabolic networks. His work formalizes metabolic pathways as stoichiometric matrices to compute feasible flux distributions and predict how perturbations—such as enzyme kinetic alterations—propagate through interconnected modules. Typical objects of study include genome-scale metabolic models (GEMs), elementary flux modes, and Michaelis-Menten kinetics embedded in ordinary differential equation systems, all analyzed through optimization frameworks like flux balance analysis (FBA) and metabolic control analysis (MCA). By integrating enzyme turnover data and thermodynamic constraints, he dissects how network topology and regulatory loops determine steady-state metabolite concentrations, distinguishing between rate-limiting steps and passive overflow effects. His computational expertise spans linear programming, parameter sensitivity analysis, and the use of platforms such as COBRApy and COPASI, with deep knowledge of concepts like futile cycles, moiety conservation, and redox cofactor balancing.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "theoretical",
+        "source_domain": "Metabolic network modeling",
+        "anchor_relation": "{\"from\": \"Metabolic pathways\", \"to\": \"constraint-based and kinetic models of metabolic networks\", \"relation\": \"predicts how age-driven enzyme changes reroute metabolite fluxes and alter steady-state concentrations\"}",
+        "object_mapping_focus": "Metabolic pathways are formalized as stoichiometric matrices; metabolites are node outputs whose predicted shifts are compared against aging hallmarks.",
+        "slot_focus": "In silico dissection of network-level constraints that dictate which metabolite changes are primary drivers versus secondary consequences of aging.",
+        "contrast_hint": "Emphasizes computational reconstruction of pathway logic and flux distributions, contrasting with observational metabolomics or reductionist mitochondrial biochemistry."
+      }
+    },
+    {
+      "key": "translational_pharmacometabolomics_researcher",
+      "type": "Translational Pharmacometabolomics Researcher",
+      "expert_description": "Trained in pharmacology and analytical biochemistry, I specialize in translational pharmacometabolomics, using targeted and untargeted mass spectrometry to map how endogenous metabolites interface with drug action and disease processes. My research centers on evaluating how exogenous modulation of metabolite levels or their sensors can recapitulate or block aging hallmarks, treating metabolites as druggable nodes that can be fine-tuned through enzyme-targeted interventions or metabolite mimetics. I design and validate small-molecule and dietary interventions in preclinical models, measuring their impact on healthspan through metabolomic flux analysis, lifespan assays, and functional phenotyping. Core methodologies include stable isotope tracing, high-resolution metabolomics, and pharmacodynamic modeling, integrated with assays for mitochondrial function and proteostasis. Keywords central to my work include caloric restriction mimetics, endogenous metabolite mimetics, enzyme-targeted interventions, healthspan extension, metabolomics-driven drug discovery, NAD+ metabolism, sirtuin activators, and mTOR modulation.",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "translational",
+        "source_domain": "Pharmacometabolomics",
+        "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"endogenous metabolite mimetics and enzyme-targeted interventions\", \"relation\": \"evaluates how exogenous modulation of metabolite levels or their sensors can recapitulate or block aging hallmarks\"}",
+        "object_mapping_focus": "Metabolites are treated as druggable nodes; organismal healthspan becomes the endpoint for intervention studies inspired by caloric restriction mimetics.",
+        "slot_focus": "Bridging metabolite biology to therapeutic design by validating whether metabolite-based interventions extend healthspan in preclinical models.",
+        "contrast_hint": "Translation-oriented with explicit focus on intervention design, unlike descriptive metabolomics or mechanistic redox signaling approaches."
+      }
+    },
+    {
+      "key": "computational_epigeneticist",
+      "type": "Computational Epigeneticist",
+      "expert_description": "Trained in computational biology and biostatistics, I specialize in developing and validating DNA methylation-based and multi-omic aging clocks. My work centers on constructing high-dimensional regression models—such as elastic net and deep neural networks—that integrate epigenome-wide CpG methylation data with transcriptomic, proteomic, and metabolomic profiles to produce robust estimators of biological age. I routinely investigate how specific metabolite concentrations, when added as predictor variables or mediator features in clock algorithms, shift predicted age acceleration or deceleration, thereby linking systemic biochemistry to epigenetic maintenance. My analytical toolkit includes feature selection on array-based and sequencing-based methylation data, multi-omic data harmonization, and survival modeling to test clock associations with healthspan outcomes. Core concepts guiding my literature searches include Horvath’s pan-tissue clock, PhenoAge, GrimAge, DNA methylation variability, epigenetic drift, and metabolome-wide association studies integrated with epigenetic readouts.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "computational",
+        "source_domain": "Epigenetic aging clocks",
+        "anchor_relation": "{\"from\": \"Aging hallmarks\", \"to\": \"DNA methylation-based and multi-omic aging clocks\", \"relation\": \"integrates metabolite data with epigenetic readouts to test whether specific metabolites accelerate or decelerate predicted biological age\"}",
+        "object_mapping_focus": "Aging hallmarks are summarized as clock-derived age estimates; metabolites serve as predictor variables or mediators in clock models.",
+        "slot_focus": "Leveraging aging clocks as integrative biomarkers to quantify the net effect of metabolite fluctuations on biological aging rate.",
+        "contrast_hint": "Uses algorithmic age prediction as a lens, contrasting with direct molecular mechanism studies or pathway-level metabolic network analysis."
+      }
+    },
+    {
+      "key": "redox_signaling_theoretical_biochemist",
+      "type": "Redox Signaling Theoretical Biochemist",
+      "expert_description": "Trained in mechanistic biochemistry and biophysical chemistry, my research group focuses on developing theoretical frameworks for how mitochondrial metabolites act as signaling entities. We specialize in parsing the chemical logic by which specific redox-active species—such as NAD+, α-ketoglutarate, and reactive oxygen species (ROS)—engage in non-enzymatic or enzyme-directed post-translational modifications. Our core methodology involves constructing detailed reaction models and kinetic simulations to predict how fluctuations in metabolite pools are transduced into covalent changes on proteins, including acylation and carbonylation. We typically study the fundamental principles governing metabolite electrophilicity, nucleophilic targets on macromolecules, and the resulting allosteric or functional consequences that alter cellular information flow. Key concepts that guide our work include redox potential landscapes, mitochondrial retrograde signaling, thiol-disulfide switches, lysine acylation stoichiometry, and the chemical basis of hormetic dose-response curves.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "theoretical",
+        "source_domain": "Redox signaling and mitochondrial biology",
+        "anchor_relation": "{\"from\": \"Metabolites\", \"to\": \"reactive metabolite species and redox-sensitive signaling cascades\", \"relation\": \"mechanistically links specific metabolites (e.g., NAD+, α-ketoglutarate, ROS) to post-translational modifications and epigenetic changes that drive hallmark acquisition\"}",
+        "object_mapping_focus": "Metabolites are parsed by their redox and signaling properties; aging hallmarks are the downstream targets of modification (e.g., histone acylation, protein carbonylation).",
+        "slot_focus": "Elucidating the causal biochemical logic by which redox-active metabolites directly modify macromolecules to enact aging hallmarks.",
+        "contrast_hint": "Centers on proximal chemical mechanisms and mitochondrial-metabolite crosstalk, distinct from systems-level metabolomics or translational intervention screening."
+      }
+    }
+  ],
+  "validation_issues": [],
+  "expert_similarity": {
+    "max_pairwise": 0.796088,
+    "max_pair": {
+      "member_key_a": "chronobiology_metabolomics_researcher",
+      "member_key_b": "translational_pharmacometabolomics_researcher",
+      "cosine_similarity": 0.796088
+    },
+    "pairs": [
+      {
+        "member_key_a": "chronobiology_metabolomics_researcher",
+        "member_key_b": "metabolic_network_theorist",
+        "cosine_similarity": 0.677281
+      },
+      {
+        "member_key_a": "chronobiology_metabolomics_researcher",
+        "member_key_b": "translational_pharmacometabolomics_researcher",
+        "cosine_similarity": 0.796088
+      },
+      {
+        "member_key_a": "chronobiology_metabolomics_researcher",
+        "member_key_b": "computational_epigeneticist",
+        "cosine_similarity": 0.79142
+      },
+      {
+        "member_key_a": "chronobiology_metabolomics_researcher",
+        "member_key_b": "redox_signaling_theoretical_biochemist",
+        "cosine_similarity": 0.674661
+      },
+      {
+        "member_key_a": "metabolic_network_theorist",
+        "member_key_b": "translational_pharmacometabolomics_researcher",
+        "cosine_similarity": 0.710342
+      },
+      {
+        "member_key_a": "metabolic_network_theorist",
+        "member_key_b": "computational_epigeneticist",
+        "cosine_similarity": 0.649186
+      },
+      {
+        "member_key_a": "metabolic_network_theorist",
+        "member_key_b": "redox_signaling_theoretical_biochemist",
+        "cosine_similarity": 0.627813
+      },
+      {
+        "member_key_a": "translational_pharmacometabolomics_researcher",
+        "member_key_b": "computational_epigeneticist",
+        "cosine_similarity": 0.732446
+      },
+      {
+        "member_key_a": "translational_pharmacometabolomics_researcher",
+        "member_key_b": "redox_signaling_theoretical_biochemist",
+        "cosine_similarity": 0.73789
+      },
+      {
+        "member_key_a": "computational_epigeneticist",
+        "member_key_b": "redox_signaling_theoretical_biochemist",
+        "cosine_similarity": 0.649807
+      }
+    ],
+    "threshold": 0.89
+  },
+  "domain_similarity": {
+    "native_domain": "Metabolism and aging biology",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "Chronobiology",
+        "native_domain_cosine": 0.600804
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "Metabolic network modeling",
+        "native_domain_cosine": 0.680242
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "Pharmacometabolomics",
+        "native_domain_cosine": 0.62591
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "Epigenetic aging clocks",
+        "native_domain_cosine": 0.616587
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "Redox signaling and mitochondrial biology",
+        "native_domain_cosine": 0.573639
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.690344,
+    "max_pair_domain": {
+      "slot_a": "slot_2",
+      "slot_b": "slot_3",
+      "source_domain_a": "Metabolic network modeling",
+      "source_domain_b": "Pharmacometabolomics",
+      "cosine_similarity": 0.690344
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "Chronobiology",
+        "source_domain_b": "Metabolic network modeling",
+        "cosine_similarity": 0.58735
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "Chronobiology",
+        "source_domain_b": "Pharmacometabolomics",
+        "cosine_similarity": 0.592965
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "Chronobiology",
+        "source_domain_b": "Epigenetic aging clocks",
+        "cosine_similarity": 0.542979
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "Chronobiology",
+        "source_domain_b": "Redox signaling and mitochondrial biology",
+        "cosine_similarity": 0.466407
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "Metabolic network modeling",
+        "source_domain_b": "Pharmacometabolomics",
+        "cosine_similarity": 0.690344
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "Metabolic network modeling",
+        "source_domain_b": "Epigenetic aging clocks",
+        "cosine_similarity": 0.477792
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "Metabolic network modeling",
+        "source_domain_b": "Redox signaling and mitochondrial biology",
+        "cosine_similarity": 0.560986
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "Pharmacometabolomics",
+        "source_domain_b": "Epigenetic aging clocks",
+        "cosine_similarity": 0.459044
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "Pharmacometabolomics",
+        "source_domain_b": "Redox signaling and mitochondrial biology",
+        "cosine_similarity": 0.490423
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "Epigenetic aging clocks",
+        "source_domain_b": "Redox signaling and mitochondrial biology",
+        "cosine_similarity": 0.407322
+      }
+    ],
+    "slot_refine_log": [
+      "Slots slot_1 and slot_3 have source_domains too similar to each other (cosine 0.859 > 0.720). Spread domains apart per tier."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 2,
+    "tier": "focused",
+    "max_expert_cosine": 0.89,
+    "min_expert_cosine": 0.32,
+    "min_source_native_cosine": 0.42,
+    "max_source_native_cosine": null,
+    "max_pairwise_domain_cosine": 0.72
+  }
+}

@@ -1,0 +1,25 @@
+You are analyzing a scientific research topic to plan an expert discussion panel.
+
+**Research context:**
+{research_context}
+
+**Panel planning guidance:**
+{parse_guidance}
+
+**Your task:**
+Extract structural components for assigning expert perspectives by domain and functional role.
+
+Return a JSON object with:
+1. "problem_summary": A concise 1-2 sentence summary of the research topic
+2. "core_objects": Array of key objects/entities, each with "name" and "role" (functional role)
+3. "core_relations": Array of objects, each with "from", "to", and "relation" describing problem-side structure
+4. "constraints": Practical or scientific constraints
+5. "native_domain": The primary scientific domain of the topic
+6. "key_concepts": 5-8 terms useful for literature retrieval in the native domain
+
+**Guidelines:**
+- Abstract by function and relations, not buzzwords alone.
+- core_relations describe the research problem structure — not panel agendas or sub-questions.
+- Follow the panel planning guidance for how broadly to span objects and relations.
+
+Return ONLY the JSON object, no other text.

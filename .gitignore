@@ -1,0 +1,36 @@
+# Secrets and machine-local editor config
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local scratch
+/tmp_script.sh
+/test_cuda.py
+
+# Separate git repository
+/ar_science/
+
+# Model weights
+/bge-m3/
+/OpenScholar_Retriever/
+/OpenScholar_Reranker/
+
+# Datastores and paper corpora
+/OpenScholar-DataStore-V3/
+/papers/
+
+# Experiment outputs
+/pre_experiments_v1/
+/pre_experiments_v2/
+/tcm-ibd-pre-experiments/
+/tcm-ibd-pre-experiments-copy/
+/ibs-c_fc_d2/
+/ibs-c_fc_d8/
+/expert_team/

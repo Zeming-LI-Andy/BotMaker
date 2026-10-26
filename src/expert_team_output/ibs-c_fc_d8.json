@@ -1,0 +1,468 @@
+{
+  "research_context": "Differences in intestinal flora between irritable bowel syndrome with constipation (IBS-C) and functional constipation (FC)",
+  "num_experts": 5,
+  "diversity": 8,
+  "team": {
+    "music_theorist_and_orchestration_analyst": {
+      "type": "Music Theorist and Orchestration Analyst",
+      "expert_description": "A senior music theorist specializing in the structural analysis of symphonic scores and the cognitive foundations of orchestration, with formal training in composition and music cognition from a leading conservatory. Her core methodological expertise lies in formalizing the principles of harmonic progression, instrumental voicing, and conductor-to-ensemble communication as rule-governed systems that generate coherent musical performances. Typical research problems include modeling how a composer assigns thematic material to specific instrumental sections to create contrapuntal dialogue, and how a conductor’s gestural cues dynamically shape tempo, dynamics, and ensemble balance in real time. Her analytical approach treats the musical score as a blueprint for coordinated action, examining the interplay of harmony, timbre, and rhythm to understand how individual instrumental lines are integrated into a unified symphonic texture. Key concepts in her work include voice leading, orchestral seating plans and acoustic spatialization, motivic development, metric hierarchy, and the semiotics of conducting patterns."
+    },
+    "bioprocess_systems_engineer": {
+      "type": "Bioprocess Systems Engineer",
+      "expert_description": "I am a principal engineer with over two decades of experience in process systems engineering, specializing in the analysis and design of continuous-flow bioreactor networks and mixed-culture bioprocesses. My core methodological expertise lies in metabolic flux analysis and the construction of mass-balance models, grounded in a rigorous chemical engineering background. My research focuses on developing stoichiometric and kinetic frameworks to resolve how substrate routing and reactor operating parameters—such as dilution rate and feed composition—determine the stable metabolic output space of a biocatalyst consortium. I routinely employ techniques like flux balance analysis, metabolic pathway decomposition, and dynamic process simulation to quantify the relationship between input conditions and product spectra, independent of the specific taxonomic identity of the constituent microbes. Key concepts in my work include reactor residence time distribution, Gibbs free energy-based feasibility analysis, elementary flux modes, and the Pareto frontier of achievable metabolic functions in spatially compartmentalized systems."
+    },
+    "metabolomics_analytical_chemist": {
+      "type": "Chemometric Metabolomics Specialist",
+      "expert_description": "I am an analytical chemist specializing in the development and validation of untargeted metabolomics workflows, with a core focus on ensuring the chemical fidelity of features extracted from high-resolution mass spectrometry data. My training lies at the intersection of separation science and multivariate statistics, where I address the inherent challenges of converting complex biological samples into reproducible, high-dimensional spectral fingerprints. A central problem in my research is the rigorous identification of molecular signatures that reliably discriminate between sample classes, which demands explicit control over analytical artifacts such as baseline drift, adduct and in-source fragment formation, and batch-to-batch signal variation. I routinely employ chemometric feature selection pipelines grounded in techniques like partial least-squares discriminant analysis, support vector machines, and random forest classifiers, always paired with robust preprocessing steps including peak alignment, normalization, and isotopic pattern verification. Key concepts in my work include false discovery rate correction for high-dimensional data, the use of pooled quality control samples for signal drift correction, mass defect filtering, and the orthogonal validation of discriminating features through tandem mass spectrometry and authentic chemical standards."
+    },
+    "theoretical_transport_phenomena_physicist": {
+      "type": "Theoretical Transport Phenomena Physicist",
+      "expert_description": "I am a theoretical physicist specializing in transport phenomena within complex biological conduits, with formal training in fluid dynamics and applied mathematics. My core methodological expertise lies in developing continuum-scale models that couple advection-diffusion-reaction processes in deformable conduits, using techniques from asymptotic analysis, multiphase flow theory, and dynamical systems. My research focuses on how spatiotemporally varying flow patterns, wall shear stresses, and scalar mixing within compliant, peristaltically driven tubes determine residence time distributions and local solute-particle encounter rates. Typical problems involve deriving reduced-order models for solute dispersion in oscillatory flows, analyzing Lagrangian coherent structures that govern particulate phase transport, and quantifying the interplay between boundary kinematics and volumetric reaction kinetics. My work draws on concepts such as lubrication theory, Taylor-Aris dispersion, Fickian and non-Fickian transport, Peclet and Damköhler number regimes, fluid-structure interaction with large deformations, and Lagrangian particle tracking to characterize microenvironmental heterogeneity in flow domains."
+    },
+    "computational_causal_inference_scientist": {
+      "type": "Computational Causal Inference Scientist",
+      "expert_description": "My research is grounded in computational statistics and machine learning, with a core focus on Bayesian causal inference and probabilistic graphical models. I develop and apply methods for reasoning about cause and effect from observational data, with particular emphasis on causal graphs, the do-calculus, and structural equation models that incorporate latent variable representations. A central thread of my work involves formally assessing the identifiability of causal queries when unobserved confounding, selection mechanisms, and measurement error are present, often using Bayesian nonparametric or semi-parametric frameworks to capture complex, high-dimensional latent structures. Typical objects of study include the decomposition of observed associations into direct, indirect, and spurious paths, and the design of estimation strategies that are robust to model misspecification. Keywords and concepts that anchor my work include Pearl's causal hierarchy, collider bias, instrumental variables, sensitivity analysis for unmeasured confounding, and posterior inference over causal effects in models with discrete and continuous latent variables."
+    }
+  },
+  "structure": {
+    "problem_summary": "Characterizing how microbial community composition and metabolic function differ between two constipation-predominant gut disorders that share symptoms but may have distinct etiologies, to identify microbial signatures that discriminate IBS-C from FC and inform mechanism-based subtyping.",
+    "core_objects": [
+      {
+        "name": "Intestinal lumen ecosystem",
+        "role": "Habitat containing dynamic microbial populations, metabolites, and host-derived substrates"
+      },
+      {
+        "name": "Gut microbial community",
+        "role": "Collective of bacteria, archaea, fungi, viruses whose composition and gene content vary with host condition"
+      },
+      {
+        "name": "Microbial metabolites",
+        "role": "Small molecules produced or transformed by microbes that mediate host-microbe signaling and gut function"
+      },
+      {
+        "name": "Host intestinal physiology",
+        "role": "Gut transit, secretion, absorption, barrier function, and neuroimmune activity shaping the luminal environment"
+      },
+      {
+        "name": "Constipation phenotype",
+        "role": "Clinical manifestation of infrequent or difficult defecation used to define IBS-C and FC cohorts"
+      },
+      {
+        "name": "Diagnostic classification boundary",
+        "role": "Criterion (e.g., abdominal pain presence) that separates IBS-C from FC in clinical taxonomy"
+      },
+      {
+        "name": "Environmental and host covariates",
+        "role": "Diet, medication, age, sex, psychosocial factors that confound or mediate microbiota-phenotype associations"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"Gut microbial community\", \"to\": \"Intestinal lumen ecosystem\", \"relation\": \"inhabits and modifies via metabolic activity\"}",
+      "{\"from\": \"Gut microbial community\", \"to\": \"Microbial metabolites\", \"relation\": \"produces or transforms\"}",
+      "{\"from\": \"Microbial metabolites\", \"to\": \"Host intestinal physiology\", \"relation\": \"modulates through receptor-mediated and metabolic pathways\"}",
+      "{\"from\": \"Host intestinal physiology\", \"to\": \"Intestinal lumen ecosystem\", \"relation\": \"constrains by setting transit time, pH, oxygen, substrate availability\"}",
+      "{\"from\": \"Host intestinal physiology\", \"to\": \"Constipation phenotype\", \"relation\": \"generates clinical manifestation when dysregulated\"}",
+      "{\"from\": \"Gut microbial community\", \"to\": \"Constipation phenotype\", \"relation\": \"associates differentially with IBS-C vs FC through compositional and functional variation\"}",
+      "{\"from\": \"Diagnostic classification boundary\", \"to\": \"Constipation phenotype\", \"relation\": \"stratifies into IBS-C or FC based on symptom criteria\"}",
+      "{\"from\": \"Environmental and host covariates\", \"to\": \"Gut microbial community\", \"relation\": \"confounds and shapes through diet, drugs, and host factors\"}"
+    ],
+    "constraints": [
+      "Overlapping symptom profiles and diagnostic criteria create cohort heterogeneity and potential misclassification",
+      "Covariates (diet, laxatives, age, psychological comorbidity) are difficult to fully control in human studies",
+      "Causal direction between microbiota alteration and constipation phenotype is hard to establish cross-sectionally",
+      "Stool samples may not represent mucosal or small intestinal microbial communities",
+      "Low microbial biomass in constipation may affect sequencing sensitivity and bias diversity estimates"
+    ],
+    "native_domain": "Gastroenterology and microbiome science",
+    "key_concepts": [
+      "Irritable bowel syndrome with constipation",
+      "Functional constipation",
+      "Gut microbiota composition",
+      "Short-chain fatty acids",
+      "Intestinal transit time",
+      "Bile acid metabolism",
+      "Methane-producing archaea",
+      "Rome IV diagnostic criteria"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "theoretical",
+      "source_domain": "Music composition and orchestration",
+      "anchor_relation": "{\"from\": \"Gut microbial community\", \"to\": \"Symphonic orchestra and musical score\", \"relation\": \"uses to explain how host-composed harmonic progressions, instrumental voicing, and conductor cues organize microbial musicians into coordinated metabolic performances and inter-species counterpoint under IBS-C vs FC conditions\"}",
+      "object_mapping_focus": "Intestinal lumen → concert hall with acoustic zones; Microbial metabolites → musical phrases and harmonic textures; Host physiology → composer/conductor assigning parts, tempo, and dynamics",
+      "slot_focus": "Applying music composition and orchestration theory to predict how harmonic structure, instrumental roles, and conducting patterns govern microbial community spatial organization and metabolic dialogue in constipation phenotypes.",
+      "contrast_hint": "While a native gastroenterology approach would correlate taxa with symptoms, this music composition lens treats the gut as a symphonic work where microbial communities form instrumental sections and metabolic pathways function as composed performances directed by host-imposed harmonic rules and conducting gestures rather than disease-specific markers."
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "computational",
+      "source_domain": "Process systems engineering",
+      "anchor_relation": "{\"from\": \"Microbial metabolites\", \"to\": \"Metabolic flux analysis and mass-balance models\", \"relation\": \"quantifies how stoichiometric constraints and substrate routing in the gut reactor produce distinct metabolite profiles under different transit and input conditions\"}",
+      "object_mapping_focus": "Intestinal lumen ecosystem → continuous-flow bioreactor with spatial compartments; Gut microbial community → biocatalyst consortium with distributed metabolic functions; Host intestinal physiology → reactor operating parameters (dilution rate, feed composition, redox); Environmental covariates → process disturbances",
+      "slot_focus": "Modeling the gut as a bioprocess to resolve how residence time and feed substrate availability constrain the metabolic output space, independent of taxonomic labels.",
+      "contrast_hint": "Unlike ecological perspectives focused on who is present, this engineering angle emphasizes the mass-flow-determined metabolic function that can emerge from different community configurations under similar process constraints."
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "translational",
+      "source_domain": "Analytical chemistry",
+      "anchor_relation": "{\"from\": \"Microbial metabolites\", \"to\": \"Untargeted metabolomics and chemometric feature selection\", \"relation\": \"identifies and validates molecular signatures that discriminate sample classes while explicitly controlling for analytical variation and confounding chemical noise\"}",
+      "object_mapping_focus": "Microbial metabolites → features in high-dimensional spectral/chromatographic data with isotopic verification; Constipation phenotype → class labels for supervised multivariate discrimination; Environmental covariates → batch effects and confounders requiring normalization; Diagnostic classification boundary → ground-truth labels for classifier training",
+      "slot_focus": "Developing robust spectral- or chromatographic fingerprints that separate IBS-C from FC based on reproducible chemical differences rather than inferred microbial taxonomy.",
+      "contrast_hint": "Shifts from biological interpretation of metabolites toward measurement science priorities—baseline correction, adduct deconvolution, and batch-effect removal—to ensure any discovered biomarker is analytically reliable before biological meaning is assigned."
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "theoretical",
+      "source_domain": "Hydrodynamics and transport phenomena",
+      "anchor_relation": "{\"from\": \"Host intestinal physiology\", \"to\": \"Advection-diffusion-reaction coupling in deformable conduits\", \"relation\": \"formalizes how peristaltic flow patterns, wall shear, and mixing determine residence time distributions and local substrate-microbe encounter rates that differ between constipation etiologies\"}",
+      "object_mapping_focus": "Intestinal lumen ecosystem → multiphase flow domain with compliant boundaries; Gut microbial community → particulate phase subject to advection and attachment; Microbial metabolites → dissolved species with production and absorption kinetics; Constipation phenotype → boundary condition set (motility amplitude, frequency, segmental coordination)",
+      "slot_focus": "Characterizing the physical transport environment that shapes microbial exposure to substrates and metabolite removal, distinguishing motility-driven from secretion-driven constipation.",
+      "contrast_hint": "Where most microbiome analyses treat transit time as a scalar confounder, this physics-based perspective treats it as a spatiotemporally resolved field that generates distinct microenvironments, providing a mechanistic basis for why similar community compositions could produce different functional outputs."
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "computational",
+      "source_domain": "Bayesian causal inference",
+      "anchor_relation": "{\"from\": \"Diagnostic classification boundary\", \"to\": \"Causal graphs and do-calculus with latent variable models\", \"relation\": \"evaluates whether the observed microbiota-phenotype associations reflect genuine causal differences between IBS-C and FC or are artifacts of selection bias, measurement error, and uncontrolled confounding by pain perception pathways\"}",
+      "object_mapping_focus": "Diagnostic classification boundary → treatment variable whose causal consistency is challenged; Gut microbial community → mediator/collider in causal graph; Constipation phenotype → multivariate outcome node; Environmental covariates → potential confounders and instrumental variable candidates; Core relation microbiota→phenotype → association to be decomposed into direct, indirect, and spurious paths",
+      "slot_focus": "Formally assessing the identifiability of microbial signatures as causal discriminators versus downstream correlates of pain-reporting behavior that defines the diagnostic boundary itself.",
+      "contrast_hint": "Unlike all other slots that accept the IBS-C vs FC distinction as a given grouping, this perspective interrogates the boundary itself as a potential source of collider bias and asks whether microbial differences reflect biology or the circular logic of symptom-based classification."
+    }
+  ],
+  "members": [
+    {
+      "key": "music_theorist_and_orchestration_analyst",
+      "type": "Music Theorist and Orchestration Analyst",
+      "expert_description": "A senior music theorist specializing in the structural analysis of symphonic scores and the cognitive foundations of orchestration, with formal training in composition and music cognition from a leading conservatory. Her core methodological expertise lies in formalizing the principles of harmonic progression, instrumental voicing, and conductor-to-ensemble communication as rule-governed systems that generate coherent musical performances. Typical research problems include modeling how a composer assigns thematic material to specific instrumental sections to create contrapuntal dialogue, and how a conductor’s gestural cues dynamically shape tempo, dynamics, and ensemble balance in real time. Her analytical approach treats the musical score as a blueprint for coordinated action, examining the interplay of harmony, timbre, and rhythm to understand how individual instrumental lines are integrated into a unified symphonic texture. Key concepts in her work include voice leading, orchestral seating plans and acoustic spatialization, motivic development, metric hierarchy, and the semiotics of conducting patterns.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "theoretical",
+        "source_domain": "Music composition and orchestration",
+        "anchor_relation": "{\"from\": \"Gut microbial community\", \"to\": \"Symphonic orchestra and musical score\", \"relation\": \"uses to explain how host-composed harmonic progressions, instrumental voicing, and conductor cues organize microbial musicians into coordinated metabolic performances and inter-species counterpoint under IBS-C vs FC conditions\"}",
+        "object_mapping_focus": "Intestinal lumen → concert hall with acoustic zones; Microbial metabolites → musical phrases and harmonic textures; Host physiology → composer/conductor assigning parts, tempo, and dynamics",
+        "slot_focus": "Applying music composition and orchestration theory to predict how harmonic structure, instrumental roles, and conducting patterns govern microbial community spatial organization and metabolic dialogue in constipation phenotypes.",
+        "contrast_hint": "While a native gastroenterology approach would correlate taxa with symptoms, this music composition lens treats the gut as a symphonic work where microbial communities form instrumental sections and metabolic pathways function as composed performances directed by host-imposed harmonic rules and conducting gestures rather than disease-specific markers."
+      }
+    },
+    {
+      "key": "bioprocess_systems_engineer",
+      "type": "Bioprocess Systems Engineer",
+      "expert_description": "I am a principal engineer with over two decades of experience in process systems engineering, specializing in the analysis and design of continuous-flow bioreactor networks and mixed-culture bioprocesses. My core methodological expertise lies in metabolic flux analysis and the construction of mass-balance models, grounded in a rigorous chemical engineering background. My research focuses on developing stoichiometric and kinetic frameworks to resolve how substrate routing and reactor operating parameters—such as dilution rate and feed composition—determine the stable metabolic output space of a biocatalyst consortium. I routinely employ techniques like flux balance analysis, metabolic pathway decomposition, and dynamic process simulation to quantify the relationship between input conditions and product spectra, independent of the specific taxonomic identity of the constituent microbes. Key concepts in my work include reactor residence time distribution, Gibbs free energy-based feasibility analysis, elementary flux modes, and the Pareto frontier of achievable metabolic functions in spatially compartmentalized systems.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "computational",
+        "source_domain": "Process systems engineering",
+        "anchor_relation": "{\"from\": \"Microbial metabolites\", \"to\": \"Metabolic flux analysis and mass-balance models\", \"relation\": \"quantifies how stoichiometric constraints and substrate routing in the gut reactor produce distinct metabolite profiles under different transit and input conditions\"}",
+        "object_mapping_focus": "Intestinal lumen ecosystem → continuous-flow bioreactor with spatial compartments; Gut microbial community → biocatalyst consortium with distributed metabolic functions; Host intestinal physiology → reactor operating parameters (dilution rate, feed composition, redox); Environmental covariates → process disturbances",
+        "slot_focus": "Modeling the gut as a bioprocess to resolve how residence time and feed substrate availability constrain the metabolic output space, independent of taxonomic labels.",
+        "contrast_hint": "Unlike ecological perspectives focused on who is present, this engineering angle emphasizes the mass-flow-determined metabolic function that can emerge from different community configurations under similar process constraints."
+      }
+    },
+    {
+      "key": "metabolomics_analytical_chemist",
+      "type": "Chemometric Metabolomics Specialist",
+      "expert_description": "I am an analytical chemist specializing in the development and validation of untargeted metabolomics workflows, with a core focus on ensuring the chemical fidelity of features extracted from high-resolution mass spectrometry data. My training lies at the intersection of separation science and multivariate statistics, where I address the inherent challenges of converting complex biological samples into reproducible, high-dimensional spectral fingerprints. A central problem in my research is the rigorous identification of molecular signatures that reliably discriminate between sample classes, which demands explicit control over analytical artifacts such as baseline drift, adduct and in-source fragment formation, and batch-to-batch signal variation. I routinely employ chemometric feature selection pipelines grounded in techniques like partial least-squares discriminant analysis, support vector machines, and random forest classifiers, always paired with robust preprocessing steps including peak alignment, normalization, and isotopic pattern verification. Key concepts in my work include false discovery rate correction for high-dimensional data, the use of pooled quality control samples for signal drift correction, mass defect filtering, and the orthogonal validation of discriminating features through tandem mass spectrometry and authentic chemical standards.",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "translational",
+        "source_domain": "Analytical chemistry",
+        "anchor_relation": "{\"from\": \"Microbial metabolites\", \"to\": \"Untargeted metabolomics and chemometric feature selection\", \"relation\": \"identifies and validates molecular signatures that discriminate sample classes while explicitly controlling for analytical variation and confounding chemical noise\"}",
+        "object_mapping_focus": "Microbial metabolites → features in high-dimensional spectral/chromatographic data with isotopic verification; Constipation phenotype → class labels for supervised multivariate discrimination; Environmental covariates → batch effects and confounders requiring normalization; Diagnostic classification boundary → ground-truth labels for classifier training",
+        "slot_focus": "Developing robust spectral- or chromatographic fingerprints that separate IBS-C from FC based on reproducible chemical differences rather than inferred microbial taxonomy.",
+        "contrast_hint": "Shifts from biological interpretation of metabolites toward measurement science priorities—baseline correction, adduct deconvolution, and batch-effect removal—to ensure any discovered biomarker is analytically reliable before biological meaning is assigned."
+      }
+    },
+    {
+      "key": "theoretical_transport_phenomena_physicist",
+      "type": "Theoretical Transport Phenomena Physicist",
+      "expert_description": "I am a theoretical physicist specializing in transport phenomena within complex biological conduits, with formal training in fluid dynamics and applied mathematics. My core methodological expertise lies in developing continuum-scale models that couple advection-diffusion-reaction processes in deformable conduits, using techniques from asymptotic analysis, multiphase flow theory, and dynamical systems. My research focuses on how spatiotemporally varying flow patterns, wall shear stresses, and scalar mixing within compliant, peristaltically driven tubes determine residence time distributions and local solute-particle encounter rates. Typical problems involve deriving reduced-order models for solute dispersion in oscillatory flows, analyzing Lagrangian coherent structures that govern particulate phase transport, and quantifying the interplay between boundary kinematics and volumetric reaction kinetics. My work draws on concepts such as lubrication theory, Taylor-Aris dispersion, Fickian and non-Fickian transport, Peclet and Damköhler number regimes, fluid-structure interaction with large deformations, and Lagrangian particle tracking to characterize microenvironmental heterogeneity in flow domains.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "theoretical",
+        "source_domain": "Hydrodynamics and transport phenomena",
+        "anchor_relation": "{\"from\": \"Host intestinal physiology\", \"to\": \"Advection-diffusion-reaction coupling in deformable conduits\", \"relation\": \"formalizes how peristaltic flow patterns, wall shear, and mixing determine residence time distributions and local substrate-microbe encounter rates that differ between constipation etiologies\"}",
+        "object_mapping_focus": "Intestinal lumen ecosystem → multiphase flow domain with compliant boundaries; Gut microbial community → particulate phase subject to advection and attachment; Microbial metabolites → dissolved species with production and absorption kinetics; Constipation phenotype → boundary condition set (motility amplitude, frequency, segmental coordination)",
+        "slot_focus": "Characterizing the physical transport environment that shapes microbial exposure to substrates and metabolite removal, distinguishing motility-driven from secretion-driven constipation.",
+        "contrast_hint": "Where most microbiome analyses treat transit time as a scalar confounder, this physics-based perspective treats it as a spatiotemporally resolved field that generates distinct microenvironments, providing a mechanistic basis for why similar community compositions could produce different functional outputs."
+      }
+    },
+    {
+      "key": "computational_causal_inference_scientist",
+      "type": "Computational Causal Inference Scientist",
+      "expert_description": "My research is grounded in computational statistics and machine learning, with a core focus on Bayesian causal inference and probabilistic graphical models. I develop and apply methods for reasoning about cause and effect from observational data, with particular emphasis on causal graphs, the do-calculus, and structural equation models that incorporate latent variable representations. A central thread of my work involves formally assessing the identifiability of causal queries when unobserved confounding, selection mechanisms, and measurement error are present, often using Bayesian nonparametric or semi-parametric frameworks to capture complex, high-dimensional latent structures. Typical objects of study include the decomposition of observed associations into direct, indirect, and spurious paths, and the design of estimation strategies that are robust to model misspecification. Keywords and concepts that anchor my work include Pearl's causal hierarchy, collider bias, instrumental variables, sensitivity analysis for unmeasured confounding, and posterior inference over causal effects in models with discrete and continuous latent variables.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "computational",
+        "source_domain": "Bayesian causal inference",
+        "anchor_relation": "{\"from\": \"Diagnostic classification boundary\", \"to\": \"Causal graphs and do-calculus with latent variable models\", \"relation\": \"evaluates whether the observed microbiota-phenotype associations reflect genuine causal differences between IBS-C and FC or are artifacts of selection bias, measurement error, and uncontrolled confounding by pain perception pathways\"}",
+        "object_mapping_focus": "Diagnostic classification boundary → treatment variable whose causal consistency is challenged; Gut microbial community → mediator/collider in causal graph; Constipation phenotype → multivariate outcome node; Environmental covariates → potential confounders and instrumental variable candidates; Core relation microbiota→phenotype → association to be decomposed into direct, indirect, and spurious paths",
+        "slot_focus": "Formally assessing the identifiability of microbial signatures as causal discriminators versus downstream correlates of pain-reporting behavior that defines the diagnostic boundary itself.",
+        "contrast_hint": "Unlike all other slots that accept the IBS-C vs FC distinction as a given grouping, this perspective interrogates the boundary itself as a potential source of collider bias and asks whether microbial differences reflect biology or the circular logic of symptom-based classification."
+      }
+    }
+  ],
+  "validation_issues": [
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7018600702285767,
+      "reason": "Expert descriptions too similar: cosine 0.702 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.728918194770813,
+      "reason": "Expert descriptions too similar: cosine 0.729 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.724310040473938,
+      "reason": "Expert descriptions too similar: cosine 0.724 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7269434332847595,
+      "reason": "Expert descriptions too similar: cosine 0.727 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7656527161598206,
+      "reason": "Expert descriptions too similar: cosine 0.766 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7283785343170166,
+      "reason": "Expert descriptions too similar: cosine 0.728 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.75545334815979,
+      "reason": "Expert descriptions too similar: cosine 0.755 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7338037490844727,
+      "reason": "Expert descriptions too similar: cosine 0.734 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7354083061218262,
+      "reason": "Expert descriptions too similar: cosine 0.735 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7324351072311401,
+      "reason": "Expert descriptions too similar: cosine 0.732 > max 0.700"
+    },
+    {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.7131486535072327,
+      "reason": "Expert descriptions too similar: cosine 0.713 > max 0.700"
+    }
+  ],
+  "expert_similarity": {
+    "max_pairwise": 0.713149,
+    "max_pair": {
+      "member_key_a": "bioprocess_systems_engineer",
+      "member_key_b": "metabolomics_analytical_chemist",
+      "cosine_similarity": 0.713149
+    },
+    "pairs": [
+      {
+        "member_key_a": "music_theorist_and_orchestration_analyst",
+        "member_key_b": "bioprocess_systems_engineer",
+        "cosine_similarity": 0.636219
+      },
+      {
+        "member_key_a": "music_theorist_and_orchestration_analyst",
+        "member_key_b": "metabolomics_analytical_chemist",
+        "cosine_similarity": 0.655912
+      },
+      {
+        "member_key_a": "music_theorist_and_orchestration_analyst",
+        "member_key_b": "theoretical_transport_phenomena_physicist",
+        "cosine_similarity": 0.645418
+      },
+      {
+        "member_key_a": "music_theorist_and_orchestration_analyst",
+        "member_key_b": "computational_causal_inference_scientist",
+        "cosine_similarity": 0.664944
+      },
+      {
+        "member_key_a": "bioprocess_systems_engineer",
+        "member_key_b": "metabolomics_analytical_chemist",
+        "cosine_similarity": 0.713149
+      },
+      {
+        "member_key_a": "bioprocess_systems_engineer",
+        "member_key_b": "theoretical_transport_phenomena_physicist",
+        "cosine_similarity": 0.695669
+      },
+      {
+        "member_key_a": "bioprocess_systems_engineer",
+        "member_key_b": "computational_causal_inference_scientist",
+        "cosine_similarity": 0.628108
+      },
+      {
+        "member_key_a": "metabolomics_analytical_chemist",
+        "member_key_b": "theoretical_transport_phenomena_physicist",
+        "cosine_similarity": 0.662503
+      },
+      {
+        "member_key_a": "metabolomics_analytical_chemist",
+        "member_key_b": "computational_causal_inference_scientist",
+        "cosine_similarity": 0.653115
+      },
+      {
+        "member_key_a": "theoretical_transport_phenomena_physicist",
+        "member_key_b": "computational_causal_inference_scientist",
+        "cosine_similarity": 0.668788
+      }
+    ],
+    "threshold": 0.7
+  },
+  "domain_similarity": {
+    "native_domain": "Gastroenterology and microbiome science",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "Music composition and orchestration",
+        "native_domain_cosine": 0.431573
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "Process systems engineering",
+        "native_domain_cosine": 0.451388
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "Analytical chemistry",
+        "native_domain_cosine": 0.460497
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "Hydrodynamics and transport phenomena",
+        "native_domain_cosine": 0.495529
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "Bayesian causal inference",
+        "native_domain_cosine": 0.442132
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.568278,
+    "max_pair_domain": {
+      "slot_a": "slot_3",
+      "slot_b": "slot_5",
+      "source_domain_a": "Analytical chemistry",
+      "source_domain_b": "Bayesian causal inference",
+      "cosine_similarity": 0.568278
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "Music composition and orchestration",
+        "source_domain_b": "Process systems engineering",
+        "cosine_similarity": 0.462031
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "Music composition and orchestration",
+        "source_domain_b": "Analytical chemistry",
+        "cosine_similarity": 0.498982
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "Music composition and orchestration",
+        "source_domain_b": "Hydrodynamics and transport phenomena",
+        "cosine_similarity": 0.502457
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "Music composition and orchestration",
+        "source_domain_b": "Bayesian causal inference",
+        "cosine_similarity": 0.465797
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "Process systems engineering",
+        "source_domain_b": "Analytical chemistry",
+        "cosine_similarity": 0.541817
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "Process systems engineering",
+        "source_domain_b": "Hydrodynamics and transport phenomena",
+        "cosine_similarity": 0.470498
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "Process systems engineering",
+        "source_domain_b": "Bayesian causal inference",
+        "cosine_similarity": 0.492769
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "Analytical chemistry",
+        "source_domain_b": "Hydrodynamics and transport phenomena",
+        "cosine_similarity": 0.508193
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "Analytical chemistry",
+        "source_domain_b": "Bayesian causal inference",
+        "cosine_similarity": 0.568278
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "Hydrodynamics and transport phenomena",
+        "source_domain_b": "Bayesian causal inference",
+        "cosine_similarity": 0.524498
+      }
+    ],
+    "slot_refine_log": [
+      "Slot slot_1: source_domain 'Community ecology' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.460 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Architectural design and urban planning' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.491 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Political science and governance structures' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.622 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Economic market theory and game theory' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.463 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Music theory and orchestration' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.494 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Political science and coalition governance' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.573 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Architectural design and urban planning' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.491 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Electrochemistry and battery design' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.487 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Urban planning and public transit network design' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.452 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'Theater and performance studies' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.503 > 0.450). Use a more distant field.",
+      "Slot slot_2: source_domain 'Process systems engineering' is too close to native domain 'Gastroenterology and microbiome science' (cosine 0.451 > 0.450). Use a more distant field."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 8,
+    "tier": "diverse",
+    "max_expert_cosine": 0.7,
+    "min_expert_cosine": null,
+    "min_source_native_cosine": null,
+    "max_source_native_cosine": 0.45,
+    "max_pairwise_domain_cosine": 0.55
+  }
+}

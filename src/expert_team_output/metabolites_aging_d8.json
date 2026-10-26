@@ -1,0 +1,417 @@
+{
+  "research_context": "The relationship between metabolites and aging",
+  "num_experts": 5,
+  "diversity": 8,
+  "team": {
+    "computational_stellar_astrophysicist": {
+      "type": "Computational Stellar Astrophysicist",
+      "expert_description": "A computational astrophysicist specializing in stellar evolution and nucleosynthesis, trained in advanced hydrodynamic simulations and nuclear reaction network integration. My research focuses on modeling how stars age through progressive core fuel depletion, shell burning, and the resulting layered elemental abundance distributions, using large-scale stellar population synthesis codes. I typically investigate the structural transformations of stars across the Hertzsprung-Russell diagram, employing asteroseismic oscillation modes, photometric light curves, and high-resolution spectroscopic metallicity indices to trace nucleosynthetic yields and mixing episodes. Core concepts guiding my literature searches include main-sequence hydrogen burning, core helium mass fraction, neutrino flux declines, dredge-up processes, and mass loss mechanisms, as well as initial mass functions and binary interaction effects on supernova remnant morphologies."
+    },
+    "control_theoretician_and_dynamical_systems_engineer": {
+      "type": "Control Theoretician and Dynamical Systems Engineer",
+      "expert_description": "A theoretical engineer trained in the mathematics of dynamical systems and feedback control, specializing in the structural analysis of complex networks. Their core expertise lies in characterizing the intrinsic properties of linear and nonlinear systems through the use of observability and controllability gramians, which quantify how internal states can be inferred from outputs and influenced by inputs. Typical research involves constructing state-space representations from first-principles models or data-driven system identification, then applying singular value decomposition to gramian matrices to map the geometry of the reachable state space and the most informative measurement directions. Central to their work are concepts like empirical gramians, balanced truncation for model reduction, state estimator design (e.g., Kalman filters), and the graph-theoretic conditions for structural controllability, all aimed at understanding the fundamental limits of what can be achieved through actuation and sensing in any given dynamical network."
+    },
+    "evolutionary_biodemographer": {
+      "type": "Evolutionary Biodemographer",
+      "expert_description": "I am a senior researcher trained in evolutionary biology and population dynamics, with a core focus on the empirical analysis of life-history trade-off architectures. My work examines how natural selection shapes the evolution of somatic repair and maintenance systems across long-lived and short-lived species, integrating comparative demography, quantitative genetics, and phylogenetic methods. I study repair system efficacy as an evolved allocation strategy, investigating how organisms distribute finite energetic resources between reproduction, growth, and cellular upkeep in response to ecological mortality gradients. Typical research problems involve decomposing age-specific mortality trajectories, estimating the fitness costs and benefits of repair investment, and mapping trade-offs that constrain the plasticity of healthspan across lineages. Keywords and concepts that anchor my literature include the declining force of selection with age, antagonistic pleiotropy, disposable soma theory, cost-of-repair models, reproductive effort, and phylogenetic constraints on somatic maintenance."
+    },
+    "computational_causal_discovery_scientist": {
+      "type": "Computational Causal Discovery Scientist",
+      "expert_description": "I am a computational scientist trained at the intersection of machine learning and causal inference, with deep methodological expertise in structure learning algorithms for high-dimensional time series. My core work focuses on discovering directed causal graphs from observational and interventional data, specifically tackling the challenge of latent confounding that obscures true regulatory relationships. Typical research problems involve developing and applying constraint-based, score-based, and functional causal model approaches—such as variants of the Fast Causal Inference (FCI) algorithm and its temporal extensions like tsFCI or SVAR-FCI—to reconstruct networks where unobserved common causes may be present. I treat variables as nodes in a dynamic structural causal model with time-lagged dependencies, and I rely heavily on conditional independence testing, graphical criteria like d-separation and m-separation, and identifiability theory to distinguish direct causal effects from spurious associations induced by hidden confounders. Central concepts in my daily work include Markov equivalence classes, partial ancestral graphs (PAGs), independent component analysis with non-Gaussianity assumptions (LiNGAM), and the integration of interventional data to orient edges and resolve equivalence classes, enabling the discovery of robust causal mechanisms from complex longitudinal data."
+    },
+    "translational_pharmacometrician": {
+      "type": "Translational Pharmacologist",
+      "expert_description": "I am a translational pharmacologist with a Ph.D. in pharmaceutical sciences and postdoctoral training in physiologically based pharmacokinetic modeling, now leading a lab focused on quantitative systems pharmacology. My core methodological expertise lies in constructing and validating pharmacokinetic-pharmacodynamic (PK-PD) compartment models that capture how tissue-specific barriers, transporter activity, and local metabolism dictate the distribution and target engagement of small-molecule compounds. A central problem in my work is characterizing the efficacy-toxicity ratio of metabolite-modulating interventions by linking drug-like properties of endogenous metabolites to their differential exposure profiles across distinct tissue microenvironments. I routinely study the binding kinetics of compounds to sensor pathway targets and correlate downstream effector pharmacodynamic biomarkers with clinical endpoints to understand why promising candidates often fail at the translational stage. Key concepts guiding my literature searches and experimental design include volume of distribution, clearance, tissue partition coefficients, target occupancy, therapeutic index, and physiologically based pharmacokinetic modeling."
+    }
+  },
+  "structure": {
+    "problem_summary": "How do small-molecule metabolites mechanistically influence the rate and phenotypes of biological aging across molecular, cellular, and organismal scales, and how can these relationships be modulated to extend healthspan.",
+    "core_objects": [
+      {
+        "name": "metabolite",
+        "role": "signaling molecule, substrate, or damage agent that varies with age and modulates physiological state"
+      },
+      {
+        "name": "aging process",
+        "role": "time-dependent decline in function and resilience across biological scales"
+      },
+      {
+        "name": "sensor pathway",
+        "role": "molecular machinery that detects metabolite levels and transduces signals to effector systems"
+      },
+      {
+        "name": "effector mechanism",
+        "role": "downstream process that executes changes in gene expression, repair, or metabolism in response to signals"
+      },
+      {
+        "name": "damage accumulator",
+        "role": "biomolecular structure or system that accumulates metabolite-induced damage over time"
+      },
+      {
+        "name": "repair system",
+        "role": "homeostatic machinery that reverses or clears metabolite-linked damage"
+      },
+      {
+        "name": "tissue microenvironment",
+        "role": "local context where metabolite concentrations and cell-cell interactions shape aging outcomes"
+      },
+      {
+        "name": "organismal phenotype",
+        "role": "integrative readout of aging, including lifespan, healthspan, and functional decline"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"metabolite\", \"to\": \"sensor pathway\", \"relation\": \"binds or allosterically modulates\"}",
+      "{\"from\": \"sensor pathway\", \"to\": \"effector mechanism\", \"relation\": \"activates or represses through signaling cascade\"}",
+      "{\"from\": \"effector mechanism\", \"to\": \"aging process\", \"relation\": \"accelerates or decelerates\"}",
+      "{\"from\": \"metabolite\", \"to\": \"damage accumulator\", \"relation\": \"chemically modifies through glycation, oxidation, or adduct formation\"}",
+      "{\"from\": \"repair system\", \"to\": \"damage accumulator\", \"relation\": \"removes or reverses damage\"}",
+      "{\"from\": \"repair system\", \"to\": \"aging process\", \"relation\": \"mitigates decline when functional\"}",
+      "{\"from\": \"tissue microenvironment\", \"to\": \"metabolite\", \"relation\": \"determines local concentration and flux\"}",
+      "{\"from\": \"aging process\", \"to\": \"organismal phenotype\", \"relation\": \"produces observable functional decline\"}"
+    ],
+    "constraints": [
+      "Metabolite pools are highly dynamic and compartmentalized, making causal attribution difficult.",
+      "Aging is multifactorial; isolating single metabolite effects requires controlling for genetic, dietary, and environmental confounders.",
+      "Interventions that modulate metabolites often have pleiotropic effects across tissues and pathways.",
+      "Translational relevance is limited by differences in metabolism between model organisms and humans."
+    ],
+    "native_domain": "biochemistry and geroscience",
+    "key_concepts": [
+      "metabolomics of aging",
+      "nutrient-sensing pathways",
+      "cellular senescence",
+      "mitochondrial metabolism",
+      "redox homeostasis",
+      "epigenetic clocks",
+      "protein glycation",
+      "healthspan vs. lifespan"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "lens": "computational",
+      "source_domain": "astrophysics and stellar evolution",
+      "anchor_relation": "{\"from\": \"aging process\", \"to\": \"stellar evolution and nucleosynthesis\", \"relation\": \"models progressive functional decline through main-sequence hydrogen depletion, core contraction, shell burning and nucleosynthetic layering, and eventual collapse or dispersal across scales from atomic fusion cross-sections to stellar population synthesis\"}",
+      "object_mapping_focus": "Metabolites become elemental abundances, nucleosynthetic yields, and spectral line ratios; sensor pathways map to asteroseismic oscillation modes, photometric light curves, and spectroscopic metallicity indices; damage accumulators correspond to core helium mass fraction, neutrino flux declines, and dredge-up mixing episodes; organismal phenotype maps to Hertzsprung-Russell diagram tracks, luminosity classes, and supernova remnant morphologies under varying initial mass functions and binary interactions",
+      "slot_focus": "How cumulative nuclear burning, mass loss, and nucleosynthetic alteration mechanisms determine the pace and phase transitions of aging as a progressive stellar structure transformation and elemental abundance redistribution process across scales",
+      "contrast_hint": "Unlike native biochemistry which traces specific molecular pathways, this slot treats aging as stellar nucleosynthesis governed by initial mass, fusion cross-sections, and progressive depletion of core fuel and radiative energy output, revealing shell-burning and mixing precursors invisible to pathway-centric analysis"
+    },
+    {
+      "slot_id": "slot_2",
+      "lens": "theoretical",
+      "source_domain": "control theory and dynamical systems",
+      "anchor_relation": "{\"from\": \"sensor pathway\", \"to\": \"observability and controllability gramians\", \"relation\": \"models sensor pathways as state estimators and characterizes the reachable intervention space for modulating aging trajectories\"}",
+      "object_mapping_focus": "Sensor pathways become measurement operators in a state-space formulation; metabolite concentrations are partially observed state variables; effector mechanisms map to control inputs; the aging process is the system trajectory; repair systems correspond to stabilizing feedback controllers",
+      "slot_focus": "How the inherent observability and controllability properties of nutrient-sensing architectures constrain which aging phenotypes are modulable through metabolite-level interventions",
+      "contrast_hint": "While complex systems science emphasizes emergent network properties, control theory focuses on actionable intervention design—identifying which sensor nodes, if perturbed, can steer the system toward healthspan-optimal trajectories"
+    },
+    {
+      "slot_id": "slot_3",
+      "lens": "empirical",
+      "source_domain": "evolutionary biology",
+      "anchor_relation": "{\"from\": \"repair system\", \"to\": \"life-history trade-off architectures\", \"relation\": \"interprets repair system efficacy as an evolved allocation strategy shaped by selection gradients across ecological contexts\"}",
+      "object_mapping_focus": "Repair systems become phenotypic investments with fitness costs and benefits; metabolites signal resource availability and somatic state; damage accumulators correspond to mortality risk surfaces; aging process maps to the declining force of selection with age; organismal phenotype becomes lifetime reproductive success",
+      "slot_focus": "How the evolutionary design space of repair-and-maintenance allocation explains cross-species variation in metabolite-aging relationships and constrains the plasticity of healthspan extension",
+      "contrast_hint": "Unlike control theory's engineering stance on optimal intervention, evolutionary biology asks why suboptimal repair persists—revealing phylogenetic constraints and trade-off architectures that pre-condition any translational strategy"
+    },
+    {
+      "slot_id": "slot_4",
+      "lens": "computational",
+      "source_domain": "machine learning and causal inference",
+      "anchor_relation": "{\"from\": \"metabolite\", \"to\": \"causal graph discovery under latent confounding\", \"relation\": \"learns directed causal structures linking metabolite dynamics to aging outcomes from observational and interventional data, distinguishing direct effects from confounded associations\"}",
+      "object_mapping_focus": "Metabolites become endogenous variables with time-lagged dependencies; sensor pathways and effector mechanisms map to mediating nodes in a structural causal model; tissue microenvironment becomes context-specific subgraphs; organismal phenotype is the outcome node; constraints map to identifiability conditions",
+      "slot_focus": "How causal structure learning from high-dimensional metabolomic time series can disentangle direct metabolite-driven aging mechanisms from epiphenomenal correlations induced by shared upstream drivers",
+      "contrast_hint": "Unlike evolutionary biology's ultimate causation, this slot targets proximal causal identification—using algorithmic methods to resolve the attribution problem that confounds native biochemistry's correlational metabolomics"
+    },
+    {
+      "slot_id": "slot_5",
+      "lens": "translational",
+      "source_domain": "pharmacology and drug development",
+      "anchor_relation": "{\"from\": \"tissue microenvironment\", \"to\": \"pharmacokinetic-pharmacodynamic compartment models\", \"relation\": \"characterizes how tissue-specific metabolite distribution, target engagement, and local pharmacodynamics determine the efficacy-toxicity ratio of metabolite-modulating interventions\"}",
+      "object_mapping_focus": "Tissue microenvironment becomes distinct pharmacokinetic compartments with barrier properties; metabolites are drug-like entities with distribution volumes and clearance rates; sensor pathways map to drug targets with binding kinetics; effector mechanisms correspond to downstream pharmacodynamic biomarkers; organismal phenotype maps to clinical endpoints in geroprotection trials",
+      "slot_focus": "How differential tissue exposure and target engagement of metabolite-modulating compounds create therapeutic windows where healthspan benefits can be achieved without disrupting essential metabolic functions in non-target compartments",
+      "contrast_hint": "Unlike causal inference which identifies what to target, pharmacology addresses the delivery problem—why a causally validated metabolite intervention may fail translationally due to compartment-specific pharmacokinetic constraints invisible in model organism studies"
+    }
+  ],
+  "members": [
+    {
+      "key": "computational_stellar_astrophysicist",
+      "type": "Computational Stellar Astrophysicist",
+      "expert_description": "A computational astrophysicist specializing in stellar evolution and nucleosynthesis, trained in advanced hydrodynamic simulations and nuclear reaction network integration. My research focuses on modeling how stars age through progressive core fuel depletion, shell burning, and the resulting layered elemental abundance distributions, using large-scale stellar population synthesis codes. I typically investigate the structural transformations of stars across the Hertzsprung-Russell diagram, employing asteroseismic oscillation modes, photometric light curves, and high-resolution spectroscopic metallicity indices to trace nucleosynthetic yields and mixing episodes. Core concepts guiding my literature searches include main-sequence hydrogen burning, core helium mass fraction, neutrino flux declines, dredge-up processes, and mass loss mechanisms, as well as initial mass functions and binary interaction effects on supernova remnant morphologies.",
+      "slot": {
+        "slot_id": "slot_1",
+        "lens": "computational",
+        "source_domain": "astrophysics and stellar evolution",
+        "anchor_relation": "{\"from\": \"aging process\", \"to\": \"stellar evolution and nucleosynthesis\", \"relation\": \"models progressive functional decline through main-sequence hydrogen depletion, core contraction, shell burning and nucleosynthetic layering, and eventual collapse or dispersal across scales from atomic fusion cross-sections to stellar population synthesis\"}",
+        "object_mapping_focus": "Metabolites become elemental abundances, nucleosynthetic yields, and spectral line ratios; sensor pathways map to asteroseismic oscillation modes, photometric light curves, and spectroscopic metallicity indices; damage accumulators correspond to core helium mass fraction, neutrino flux declines, and dredge-up mixing episodes; organismal phenotype maps to Hertzsprung-Russell diagram tracks, luminosity classes, and supernova remnant morphologies under varying initial mass functions and binary interactions",
+        "slot_focus": "How cumulative nuclear burning, mass loss, and nucleosynthetic alteration mechanisms determine the pace and phase transitions of aging as a progressive stellar structure transformation and elemental abundance redistribution process across scales",
+        "contrast_hint": "Unlike native biochemistry which traces specific molecular pathways, this slot treats aging as stellar nucleosynthesis governed by initial mass, fusion cross-sections, and progressive depletion of core fuel and radiative energy output, revealing shell-burning and mixing precursors invisible to pathway-centric analysis"
+      }
+    },
+    {
+      "key": "control_theoretician_and_dynamical_systems_engineer",
+      "type": "Control Theoretician and Dynamical Systems Engineer",
+      "expert_description": "A theoretical engineer trained in the mathematics of dynamical systems and feedback control, specializing in the structural analysis of complex networks. Their core expertise lies in characterizing the intrinsic properties of linear and nonlinear systems through the use of observability and controllability gramians, which quantify how internal states can be inferred from outputs and influenced by inputs. Typical research involves constructing state-space representations from first-principles models or data-driven system identification, then applying singular value decomposition to gramian matrices to map the geometry of the reachable state space and the most informative measurement directions. Central to their work are concepts like empirical gramians, balanced truncation for model reduction, state estimator design (e.g., Kalman filters), and the graph-theoretic conditions for structural controllability, all aimed at understanding the fundamental limits of what can be achieved through actuation and sensing in any given dynamical network.",
+      "slot": {
+        "slot_id": "slot_2",
+        "lens": "theoretical",
+        "source_domain": "control theory and dynamical systems",
+        "anchor_relation": "{\"from\": \"sensor pathway\", \"to\": \"observability and controllability gramians\", \"relation\": \"models sensor pathways as state estimators and characterizes the reachable intervention space for modulating aging trajectories\"}",
+        "object_mapping_focus": "Sensor pathways become measurement operators in a state-space formulation; metabolite concentrations are partially observed state variables; effector mechanisms map to control inputs; the aging process is the system trajectory; repair systems correspond to stabilizing feedback controllers",
+        "slot_focus": "How the inherent observability and controllability properties of nutrient-sensing architectures constrain which aging phenotypes are modulable through metabolite-level interventions",
+        "contrast_hint": "While complex systems science emphasizes emergent network properties, control theory focuses on actionable intervention design—identifying which sensor nodes, if perturbed, can steer the system toward healthspan-optimal trajectories"
+      }
+    },
+    {
+      "key": "evolutionary_biodemographer",
+      "type": "Evolutionary Biodemographer",
+      "expert_description": "I am a senior researcher trained in evolutionary biology and population dynamics, with a core focus on the empirical analysis of life-history trade-off architectures. My work examines how natural selection shapes the evolution of somatic repair and maintenance systems across long-lived and short-lived species, integrating comparative demography, quantitative genetics, and phylogenetic methods. I study repair system efficacy as an evolved allocation strategy, investigating how organisms distribute finite energetic resources between reproduction, growth, and cellular upkeep in response to ecological mortality gradients. Typical research problems involve decomposing age-specific mortality trajectories, estimating the fitness costs and benefits of repair investment, and mapping trade-offs that constrain the plasticity of healthspan across lineages. Keywords and concepts that anchor my literature include the declining force of selection with age, antagonistic pleiotropy, disposable soma theory, cost-of-repair models, reproductive effort, and phylogenetic constraints on somatic maintenance.",
+      "slot": {
+        "slot_id": "slot_3",
+        "lens": "empirical",
+        "source_domain": "evolutionary biology",
+        "anchor_relation": "{\"from\": \"repair system\", \"to\": \"life-history trade-off architectures\", \"relation\": \"interprets repair system efficacy as an evolved allocation strategy shaped by selection gradients across ecological contexts\"}",
+        "object_mapping_focus": "Repair systems become phenotypic investments with fitness costs and benefits; metabolites signal resource availability and somatic state; damage accumulators correspond to mortality risk surfaces; aging process maps to the declining force of selection with age; organismal phenotype becomes lifetime reproductive success",
+        "slot_focus": "How the evolutionary design space of repair-and-maintenance allocation explains cross-species variation in metabolite-aging relationships and constrains the plasticity of healthspan extension",
+        "contrast_hint": "Unlike control theory's engineering stance on optimal intervention, evolutionary biology asks why suboptimal repair persists—revealing phylogenetic constraints and trade-off architectures that pre-condition any translational strategy"
+      }
+    },
+    {
+      "key": "computational_causal_discovery_scientist",
+      "type": "Computational Causal Discovery Scientist",
+      "expert_description": "I am a computational scientist trained at the intersection of machine learning and causal inference, with deep methodological expertise in structure learning algorithms for high-dimensional time series. My core work focuses on discovering directed causal graphs from observational and interventional data, specifically tackling the challenge of latent confounding that obscures true regulatory relationships. Typical research problems involve developing and applying constraint-based, score-based, and functional causal model approaches—such as variants of the Fast Causal Inference (FCI) algorithm and its temporal extensions like tsFCI or SVAR-FCI—to reconstruct networks where unobserved common causes may be present. I treat variables as nodes in a dynamic structural causal model with time-lagged dependencies, and I rely heavily on conditional independence testing, graphical criteria like d-separation and m-separation, and identifiability theory to distinguish direct causal effects from spurious associations induced by hidden confounders. Central concepts in my daily work include Markov equivalence classes, partial ancestral graphs (PAGs), independent component analysis with non-Gaussianity assumptions (LiNGAM), and the integration of interventional data to orient edges and resolve equivalence classes, enabling the discovery of robust causal mechanisms from complex longitudinal data.",
+      "slot": {
+        "slot_id": "slot_4",
+        "lens": "computational",
+        "source_domain": "machine learning and causal inference",
+        "anchor_relation": "{\"from\": \"metabolite\", \"to\": \"causal graph discovery under latent confounding\", \"relation\": \"learns directed causal structures linking metabolite dynamics to aging outcomes from observational and interventional data, distinguishing direct effects from confounded associations\"}",
+        "object_mapping_focus": "Metabolites become endogenous variables with time-lagged dependencies; sensor pathways and effector mechanisms map to mediating nodes in a structural causal model; tissue microenvironment becomes context-specific subgraphs; organismal phenotype is the outcome node; constraints map to identifiability conditions",
+        "slot_focus": "How causal structure learning from high-dimensional metabolomic time series can disentangle direct metabolite-driven aging mechanisms from epiphenomenal correlations induced by shared upstream drivers",
+        "contrast_hint": "Unlike evolutionary biology's ultimate causation, this slot targets proximal causal identification—using algorithmic methods to resolve the attribution problem that confounds native biochemistry's correlational metabolomics"
+      }
+    },
+    {
+      "key": "translational_pharmacometrician",
+      "type": "Translational Pharmacologist",
+      "expert_description": "I am a translational pharmacologist with a Ph.D. in pharmaceutical sciences and postdoctoral training in physiologically based pharmacokinetic modeling, now leading a lab focused on quantitative systems pharmacology. My core methodological expertise lies in constructing and validating pharmacokinetic-pharmacodynamic (PK-PD) compartment models that capture how tissue-specific barriers, transporter activity, and local metabolism dictate the distribution and target engagement of small-molecule compounds. A central problem in my work is characterizing the efficacy-toxicity ratio of metabolite-modulating interventions by linking drug-like properties of endogenous metabolites to their differential exposure profiles across distinct tissue microenvironments. I routinely study the binding kinetics of compounds to sensor pathway targets and correlate downstream effector pharmacodynamic biomarkers with clinical endpoints to understand why promising candidates often fail at the translational stage. Key concepts guiding my literature searches and experimental design include volume of distribution, clearance, tissue partition coefficients, target occupancy, therapeutic index, and physiologically based pharmacokinetic modeling.",
+      "slot": {
+        "slot_id": "slot_5",
+        "lens": "translational",
+        "source_domain": "pharmacology and drug development",
+        "anchor_relation": "{\"from\": \"tissue microenvironment\", \"to\": \"pharmacokinetic-pharmacodynamic compartment models\", \"relation\": \"characterizes how tissue-specific metabolite distribution, target engagement, and local pharmacodynamics determine the efficacy-toxicity ratio of metabolite-modulating interventions\"}",
+        "object_mapping_focus": "Tissue microenvironment becomes distinct pharmacokinetic compartments with barrier properties; metabolites are drug-like entities with distribution volumes and clearance rates; sensor pathways map to drug targets with binding kinetics; effector mechanisms correspond to downstream pharmacodynamic biomarkers; organismal phenotype maps to clinical endpoints in geroprotection trials",
+        "slot_focus": "How differential tissue exposure and target engagement of metabolite-modulating compounds create therapeutic windows where healthspan benefits can be achieved without disrupting essential metabolic functions in non-target compartments",
+        "contrast_hint": "Unlike causal inference which identifies what to target, pharmacology addresses the delivery problem—why a causally validated metabolite intervention may fail translationally due to compartment-specific pharmacokinetic constraints invisible in model organism studies"
+      }
+    }
+  ],
+  "validation_issues": [
+    {
+      "member_key_a": "computational_causal_discovery_scientist",
+      "member_key_b": "translational_pharmacometrician",
+      "cosine_similarity": 0.7088789343833923,
+      "reason": "Expert descriptions too similar: cosine 0.709 > max 0.700"
+    },
+    {
+      "member_key_a": "control_theoretician_and_dynamical_systems_engineer",
+      "member_key_b": "computational_causal_discovery_scientist",
+      "cosine_similarity": 0.7056593894958496,
+      "reason": "Expert descriptions too similar: cosine 0.706 > max 0.700"
+    }
+  ],
+  "expert_similarity": {
+    "max_pairwise": 0.691992,
+    "max_pair": {
+      "member_key_a": "control_theoretician_and_dynamical_systems_engineer",
+      "member_key_b": "computational_causal_discovery_scientist",
+      "cosine_similarity": 0.691992
+    },
+    "pairs": [
+      {
+        "member_key_a": "computational_stellar_astrophysicist",
+        "member_key_b": "control_theoretician_and_dynamical_systems_engineer",
+        "cosine_similarity": 0.612621
+      },
+      {
+        "member_key_a": "computational_stellar_astrophysicist",
+        "member_key_b": "evolutionary_biodemographer",
+        "cosine_similarity": 0.65323
+      },
+      {
+        "member_key_a": "computational_stellar_astrophysicist",
+        "member_key_b": "computational_causal_discovery_scientist",
+        "cosine_similarity": 0.648321
+      },
+      {
+        "member_key_a": "computational_stellar_astrophysicist",
+        "member_key_b": "translational_pharmacometrician",
+        "cosine_similarity": 0.588623
+      },
+      {
+        "member_key_a": "control_theoretician_and_dynamical_systems_engineer",
+        "member_key_b": "evolutionary_biodemographer",
+        "cosine_similarity": 0.60528
+      },
+      {
+        "member_key_a": "control_theoretician_and_dynamical_systems_engineer",
+        "member_key_b": "computational_causal_discovery_scientist",
+        "cosine_similarity": 0.691992
+      },
+      {
+        "member_key_a": "control_theoretician_and_dynamical_systems_engineer",
+        "member_key_b": "translational_pharmacometrician",
+        "cosine_similarity": 0.59511
+      },
+      {
+        "member_key_a": "evolutionary_biodemographer",
+        "member_key_b": "computational_causal_discovery_scientist",
+        "cosine_similarity": 0.651244
+      },
+      {
+        "member_key_a": "evolutionary_biodemographer",
+        "member_key_b": "translational_pharmacometrician",
+        "cosine_similarity": 0.63853
+      },
+      {
+        "member_key_a": "computational_causal_discovery_scientist",
+        "member_key_b": "translational_pharmacometrician",
+        "cosine_similarity": 0.625534
+      }
+    ],
+    "threshold": 0.7
+  },
+  "domain_similarity": {
+    "native_domain": "biochemistry and geroscience",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "astrophysics and stellar evolution",
+        "native_domain_cosine": 0.534668
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "control theory and dynamical systems",
+        "native_domain_cosine": 0.470971
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "evolutionary biology",
+        "native_domain_cosine": 0.504118
+      },
+      {
+        "slot_id": "slot_4",
+        "source_domain": "machine learning and causal inference",
+        "native_domain_cosine": 0.49548
+      },
+      {
+        "slot_id": "slot_5",
+        "source_domain": "pharmacology and drug development",
+        "native_domain_cosine": 0.574017
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.655563,
+    "max_pair_domain": {
+      "slot_a": "slot_1",
+      "slot_b": "slot_3",
+      "source_domain_a": "astrophysics and stellar evolution",
+      "source_domain_b": "evolutionary biology",
+      "cosine_similarity": 0.655563
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "astrophysics and stellar evolution",
+        "source_domain_b": "control theory and dynamical systems",
+        "cosine_similarity": 0.573399
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "astrophysics and stellar evolution",
+        "source_domain_b": "evolutionary biology",
+        "cosine_similarity": 0.655563
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_4",
+        "source_domain_a": "astrophysics and stellar evolution",
+        "source_domain_b": "machine learning and causal inference",
+        "cosine_similarity": 0.570532
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_5",
+        "source_domain_a": "astrophysics and stellar evolution",
+        "source_domain_b": "pharmacology and drug development",
+        "cosine_similarity": 0.594438
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "control theory and dynamical systems",
+        "source_domain_b": "evolutionary biology",
+        "cosine_similarity": 0.522983
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_4",
+        "source_domain_a": "control theory and dynamical systems",
+        "source_domain_b": "machine learning and causal inference",
+        "cosine_similarity": 0.612686
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_5",
+        "source_domain_a": "control theory and dynamical systems",
+        "source_domain_b": "pharmacology and drug development",
+        "cosine_similarity": 0.547452
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_4",
+        "source_domain_a": "evolutionary biology",
+        "source_domain_b": "machine learning and causal inference",
+        "cosine_similarity": 0.533744
+      },
+      {
+        "slot_a": "slot_3",
+        "slot_b": "slot_5",
+        "source_domain_a": "evolutionary biology",
+        "source_domain_b": "pharmacology and drug development",
+        "cosine_similarity": 0.523731
+      },
+      {
+        "slot_a": "slot_4",
+        "slot_b": "slot_5",
+        "source_domain_a": "machine learning and causal inference",
+        "source_domain_b": "pharmacology and drug development",
+        "cosine_similarity": 0.529645
+      }
+    ],
+    "slot_refine_log": [
+      "Slot slot_1: source_domain 'complex systems science' is too close to native domain 'biochemistry and geroscience' (cosine 0.468 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'materials science and engineering' is too close to native domain 'biochemistry and geroscience' (cosine 0.612 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'seismology and earthquake engineering' is too close to native domain 'biochemistry and geroscience' (cosine 0.548 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'astronomy and stellar evolution' is too close to native domain 'biochemistry and geroscience' (cosine 0.524 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'architecture and structural engineering' is too close to native domain 'biochemistry and geroscience' (cosine 0.534 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'materials science and tribology' is too close to native domain 'biochemistry and geroscience' (cosine 0.551 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'astrophysics and stellar evolution' is too close to native domain 'biochemistry and geroscience' (cosine 0.535 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'archaeology and stratigraphic analysis' is too close to native domain 'biochemistry and geroscience' (cosine 0.470 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'materials science and fatigue mechanics' is too close to native domain 'biochemistry and geroscience' (cosine 0.543 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'geology and sedimentary basin analysis' is too close to native domain 'biochemistry and geroscience' (cosine 0.509 > 0.450). Use a more distant field.",
+      "Slot slot_1: source_domain 'astrophysics and stellar evolution' is too close to native domain 'biochemistry and geroscience' (cosine 0.535 > 0.450). Use a more distant field."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 8,
+    "tier": "diverse",
+    "max_expert_cosine": 0.7,
+    "min_expert_cosine": null,
+    "min_source_native_cosine": null,
+    "max_source_native_cosine": 0.45,
+    "max_pairwise_domain_cosine": 0.55
+  }
+}

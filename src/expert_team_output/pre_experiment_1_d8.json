@@ -1,0 +1,283 @@
+{
+  "research_context": "Using genome-wide association data for type 2 diabetes from the UK Biobank and the DIAMANTE meta-analysis, as well as dataon profiles of 249 targeted metabolites from the UK Biobank, this study analyzes the impacts of type 2 diabetes on metabolite profiles and their genetic regulation, and explores the associations between metabolites and diabetic microvascular and macrovascular complications.",
+  "num_experts": 3,
+  "diversity": 8,
+  "team": {
+    "metabolic_genetic_epidemiologist": {
+      "type": "Metabolic Genetic Epidemiologist",
+      "expert_description": "Trained in genetic epidemiology and biostatistics, I specialize in dissecting the molecular architecture of metabolic diseases through large-scale population studies. My research centers on metabolite quantitative trait locus (mQTL) mapping in deeply phenotyped cohorts, where I integrate high-throughput metabolomics with genome-wide genotyping to characterize how genetic variation shapes the metabolome in health and disease. A key focus is quantifying gene-disease interactions, particularly how conditions like type 2 diabetes modify the genetic regulation of blood metabolite levels, revealing context-specific genetic effects. I employ rigorous statistical frameworks for interaction testing, mediation analysis, and Mendelian randomization to infer causal relationships between metabolites and disease outcomes. Core concepts in my work include metabolomic profiling, SNP-based heritability, effect modification, and multi-omic integration in biobank-scale data."
+    },
+    "philosopher_of_science": {
+      "type": "Philosopher of Science",
+      "expert_description": "Senior philosopher of science specializing in the epistemology of biomedical modeling, with training in conceptual analysis and the history of scientific reasoning. Their core research examines how the epistemological commitments underlying different modeling frameworks—particularly the tension between static associational approaches and dynamic systems models—shape causal narratives about disease progression and complication risk. Recurring objects of study include the representation of biological markers as data proxies, the ontological status of model-derived constructs, and the explanatory power attributed to emergent, systems-level properties. Key concepts that inform their work and guide literature retrieval include mechanistic explanation, model-based inference, causal pluralism, temporal dynamics, and the validation of complex adaptive models."
+    },
+    "causal_inference_methodologist": {
+      "type": "Causal Mediation Biostatistician",
+      "expert_description": "I am a biostatistician trained in causal inference and epidemiologic methods, with deep expertise in formal mediation analysis. My work centers on the potential outcomes framework, using counterfactual decompositions to disentangle total effects into direct and indirect pathways, while rigorously addressing sources of bias such as time-varying confounding, measurement error, and selection effects. I routinely employ directed acyclic graphs, structural equation models, and instrumental variable techniques to strengthen identification, and I develop sensitivity analyses to evaluate the influence of unmeasured confounding on mediation estimates. Key concepts in my research include natural direct and indirect effects, sequential ignorability, mediator-outcome confounding, and the integration of Mendelian randomization with mediation frameworks."
+    }
+  },
+  "structure": {
+    "problem_summary": "This study investigates how type 2 diabetes alters circulating metabolite profiles and their genetic architecture, and examines the associations of these metabolites with diabetic microvascular and macrovascular complications using large-scale genomic and metabolomic data.",
+    "core_objects": [
+      {
+        "name": "Type 2 Diabetes",
+        "role": "disease exposure"
+      },
+      {
+        "name": "Metabolite Profiles",
+        "role": "molecular intermediate phenotypes"
+      },
+      {
+        "name": "Genetic Variants",
+        "role": "genetic regulators"
+      },
+      {
+        "name": "Diabetic Complications",
+        "role": "clinical endpoints"
+      }
+    ],
+    "core_relations": [
+      "{\"from\": \"Genetic Variants\", \"to\": \"Metabolite Profiles\", \"relation\": \"regulate levels (mQTLs)\"}",
+      "{\"from\": \"Type 2 Diabetes\", \"to\": \"Metabolite Profiles\", \"relation\": \"alters concentrations\"}",
+      "{\"from\": \"Type 2 Diabetes\", \"to\": \"Genetic Variants\", \"relation\": \"moderates their effect on Metabolite Profiles\"}",
+      "{\"from\": \"Metabolite Profiles\", \"to\": \"Diabetic Complications\", \"relation\": \"associated with risk of\"}",
+      "{\"from\": \"Type 2 Diabetes\", \"to\": \"Diabetic Complications\", \"relation\": \"causes\"}"
+    ],
+    "constraints": [
+      "Observational design limits causal inference",
+      "Targeted metabolomics panel (249 metabolites) may miss key pathways",
+      "UK Biobank cohort may have selection bias and limited generalizability",
+      "Cross-sectional metabolite measurements do not capture dynamics",
+      "Multiple testing burden across many metabolite–complication associations",
+      "Confounding by medications, comorbidities, and lifestyle factors",
+      "Heterogeneity in complication diagnosis and timing"
+    ],
+    "native_domain": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+    "key_concepts": [
+      "genome-wide association study (GWAS)",
+      "metabolomics",
+      "type 2 diabetes mellitus",
+      "metabolite quantitative trait loci (mQTL)",
+      "diabetic microvascular complications",
+      "diabetic macrovascular complications",
+      "UK Biobank",
+      "genetic epidemiology"
+    ]
+  },
+  "slots": [
+    {
+      "slot_id": "slot_1",
+      "role": "anchor",
+      "lens": "empirical",
+      "source_domain": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+      "anchor_relation": "{\"from\": \"Genetic Variants\", \"to\": \"mQTL analysis\", \"relation\": \"quantifies how T2D modifies the genetic regulation of metabolite levels\"}",
+      "object_mapping_focus": "Metabolite profiles as quantitative traits; genetic variants as SNPs; T2D as effect modifier",
+      "slot_focus": "Revealing how type 2 diabetes reshapes the genetic architecture of blood metabolites through large-scale mQTL studies.",
+      "contrast_hint": "Represents the standard multi-omics integration approach in genetic epidemiology, focusing on associational mapping and GWAS."
+    },
+    {
+      "slot_id": "slot_2",
+      "role": "perspective",
+      "lens": "theoretical",
+      "source_domain": "Philosophy of Science",
+      "anchor_relation": "{\"from\": \"Metabolite Profiles\", \"to\": \"epistemological frameworks of disease modeling\", \"relation\": \"examines how the choice between static associational and dynamic systems models shapes causal narratives about complication risk\"}",
+      "object_mapping_focus": "Metabolites as data representations; genetic variants as statistical or mechanistic proxies; complications as model-dependent constructs",
+      "slot_focus": "Exploring the mechanistic flow of metabolic dysregulation in type 2 diabetes using network-based simulations.",
+      "contrast_hint": "Contrasts with the anchor's static associational view by emphasizing dynamic, systems-level emergent properties of metabolic pathways."
+    },
+    {
+      "slot_id": "slot_3",
+      "role": "perspective",
+      "lens": "critical",
+      "source_domain": "Causal Inference",
+      "anchor_relation": "{\"from\": \"Metabolite Profiles\", \"to\": \"causal mediation analysis\", \"relation\": \"disentangles direct and indirect effects of T2D on complications via metabolite disturbances, addressing confounding\"}",
+      "object_mapping_focus": "T2D as exposure; metabolites as mediators; complications as outcomes; genetic variants as potential instruments",
+      "slot_focus": "Assessing the causal pathways linking diabetes, metabolites, and complications while rigorously addressing confounding and selection bias.",
+      "contrast_hint": "Provides a methodological check on the validity of observed associations, distinct from both the anchor's genetic mapping and the systems biology mechanistic modeling."
+    }
+  ],
+  "members": [
+    {
+      "key": "metabolic_genetic_epidemiologist",
+      "type": "Metabolic Genetic Epidemiologist",
+      "expert_description": "Trained in genetic epidemiology and biostatistics, I specialize in dissecting the molecular architecture of metabolic diseases through large-scale population studies. My research centers on metabolite quantitative trait locus (mQTL) mapping in deeply phenotyped cohorts, where I integrate high-throughput metabolomics with genome-wide genotyping to characterize how genetic variation shapes the metabolome in health and disease. A key focus is quantifying gene-disease interactions, particularly how conditions like type 2 diabetes modify the genetic regulation of blood metabolite levels, revealing context-specific genetic effects. I employ rigorous statistical frameworks for interaction testing, mediation analysis, and Mendelian randomization to infer causal relationships between metabolites and disease outcomes. Core concepts in my work include metabolomic profiling, SNP-based heritability, effect modification, and multi-omic integration in biobank-scale data.",
+      "slot": {
+        "slot_id": "slot_1",
+        "role": "anchor",
+        "lens": "empirical",
+        "source_domain": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+        "anchor_relation": "{\"from\": \"Genetic Variants\", \"to\": \"mQTL analysis\", \"relation\": \"quantifies how T2D modifies the genetic regulation of metabolite levels\"}",
+        "object_mapping_focus": "Metabolite profiles as quantitative traits; genetic variants as SNPs; T2D as effect modifier",
+        "slot_focus": "Revealing how type 2 diabetes reshapes the genetic architecture of blood metabolites through large-scale mQTL studies.",
+        "contrast_hint": "Represents the standard multi-omics integration approach in genetic epidemiology, focusing on associational mapping and GWAS."
+      }
+    },
+    {
+      "key": "philosopher_of_science",
+      "type": "Philosopher of Science",
+      "expert_description": "Senior philosopher of science specializing in the epistemology of biomedical modeling, with training in conceptual analysis and the history of scientific reasoning. Their core research examines how the epistemological commitments underlying different modeling frameworks—particularly the tension between static associational approaches and dynamic systems models—shape causal narratives about disease progression and complication risk. Recurring objects of study include the representation of biological markers as data proxies, the ontological status of model-derived constructs, and the explanatory power attributed to emergent, systems-level properties. Key concepts that inform their work and guide literature retrieval include mechanistic explanation, model-based inference, causal pluralism, temporal dynamics, and the validation of complex adaptive models.",
+      "slot": {
+        "slot_id": "slot_2",
+        "role": "perspective",
+        "lens": "theoretical",
+        "source_domain": "Philosophy of Science",
+        "anchor_relation": "{\"from\": \"Metabolite Profiles\", \"to\": \"epistemological frameworks of disease modeling\", \"relation\": \"examines how the choice between static associational and dynamic systems models shapes causal narratives about complication risk\"}",
+        "object_mapping_focus": "Metabolites as data representations; genetic variants as statistical or mechanistic proxies; complications as model-dependent constructs",
+        "slot_focus": "Exploring the mechanistic flow of metabolic dysregulation in type 2 diabetes using network-based simulations.",
+        "contrast_hint": "Contrasts with the anchor's static associational view by emphasizing dynamic, systems-level emergent properties of metabolic pathways."
+      }
+    },
+    {
+      "key": "causal_inference_methodologist",
+      "type": "Causal Mediation Biostatistician",
+      "expert_description": "I am a biostatistician trained in causal inference and epidemiologic methods, with deep expertise in formal mediation analysis. My work centers on the potential outcomes framework, using counterfactual decompositions to disentangle total effects into direct and indirect pathways, while rigorously addressing sources of bias such as time-varying confounding, measurement error, and selection effects. I routinely employ directed acyclic graphs, structural equation models, and instrumental variable techniques to strengthen identification, and I develop sensitivity analyses to evaluate the influence of unmeasured confounding on mediation estimates. Key concepts in my research include natural direct and indirect effects, sequential ignorability, mediator-outcome confounding, and the integration of Mendelian randomization with mediation frameworks.",
+      "slot": {
+        "slot_id": "slot_3",
+        "role": "perspective",
+        "lens": "critical",
+        "source_domain": "Causal Inference",
+        "anchor_relation": "{\"from\": \"Metabolite Profiles\", \"to\": \"causal mediation analysis\", \"relation\": \"disentangles direct and indirect effects of T2D on complications via metabolite disturbances, addressing confounding\"}",
+        "object_mapping_focus": "T2D as exposure; metabolites as mediators; complications as outcomes; genetic variants as potential instruments",
+        "slot_focus": "Assessing the causal pathways linking diabetes, metabolites, and complications while rigorously addressing confounding and selection bias.",
+        "contrast_hint": "Provides a methodological check on the validity of observed associations, distinct from both the anchor's genetic mapping and the systems biology mechanistic modeling."
+      }
+    }
+  ],
+  "validation_issues": [
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.73209547996521,
+      "reason": "Expert descriptions too similar: cosine 0.732 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.7073324918746948,
+      "reason": "Expert descriptions too similar: cosine 0.707 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.7118188142776489,
+      "reason": "Expert descriptions too similar: cosine 0.712 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.705554187297821,
+      "reason": "Expert descriptions too similar: cosine 0.706 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.7106818556785583,
+      "reason": "Expert descriptions too similar: cosine 0.711 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.7210595607757568,
+      "reason": "Expert descriptions too similar: cosine 0.721 > max 0.700"
+    },
+    {
+      "member_key_a": "philosopher_of_science",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.7042266726493835,
+      "reason": "Expert descriptions too similar: cosine 0.704 > max 0.700"
+    }
+  ],
+  "expert_similarity": {
+    "max_pairwise": 0.669219,
+    "max_pair": {
+      "member_key_a": "metabolic_genetic_epidemiologist",
+      "member_key_b": "causal_inference_methodologist",
+      "cosine_similarity": 0.669219
+    },
+    "pairs": [
+      {
+        "member_key_a": "metabolic_genetic_epidemiologist",
+        "member_key_b": "philosopher_of_science",
+        "cosine_similarity": 0.6546
+      },
+      {
+        "member_key_a": "metabolic_genetic_epidemiologist",
+        "member_key_b": "causal_inference_methodologist",
+        "cosine_similarity": 0.669219
+      },
+      {
+        "member_key_a": "philosopher_of_science",
+        "member_key_b": "causal_inference_methodologist",
+        "cosine_similarity": 0.664016
+      }
+    ],
+    "threshold": 0.7
+  },
+  "domain_similarity": {
+    "native_domain": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+    "slots": [
+      {
+        "slot_id": "slot_1",
+        "source_domain": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+        "native_domain_cosine": 1.0,
+        "role": "anchor"
+      },
+      {
+        "slot_id": "slot_2",
+        "source_domain": "Philosophy of Science",
+        "native_domain_cosine": 0.435381,
+        "role": "perspective"
+      },
+      {
+        "slot_id": "slot_3",
+        "source_domain": "Causal Inference",
+        "native_domain_cosine": 0.440748,
+        "role": "perspective"
+      }
+    ],
+    "max_pairwise_domain_cosine": 0.486993,
+    "max_pair_domain": {
+      "slot_a": "slot_2",
+      "slot_b": "slot_3",
+      "source_domain_a": "Philosophy of Science",
+      "source_domain_b": "Causal Inference",
+      "cosine_similarity": 0.486993
+    },
+    "pairwise_domain_pairs": [
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_2",
+        "source_domain_a": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+        "source_domain_b": "Philosophy of Science",
+        "cosine_similarity": 0.435381
+      },
+      {
+        "slot_a": "slot_1",
+        "slot_b": "slot_3",
+        "source_domain_a": "Genetic and Molecular Epidemiology of Metabolic Diseases",
+        "source_domain_b": "Causal Inference",
+        "cosine_similarity": 0.440748
+      },
+      {
+        "slot_a": "slot_2",
+        "slot_b": "slot_3",
+        "source_domain_a": "Philosophy of Science",
+        "source_domain_b": "Causal Inference",
+        "cosine_similarity": 0.486993
+      }
+    ],
+    "slot_refine_log": [
+      "Slot slot_2: source_domain 'Systems Biology' is too close to native domain 'Genetic and Molecular Epidemiology of Metabolic Diseases' (cosine 0.500 > 0.450). Use a more distant field."
+    ]
+  },
+  "diversity_profile": {
+    "diversity": 8,
+    "tier": "diverse",
+    "max_expert_cosine": 0.7,
+    "min_expert_cosine": null,
+    "anchor_min_source_native_cosine": 0.52,
+    "min_source_native_cosine": null,
+    "max_source_native_cosine": 0.45,
+    "max_pairwise_domain_cosine": 0.55
+  }
+}
